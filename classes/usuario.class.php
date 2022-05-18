@@ -81,12 +81,14 @@ class usuario{
     public function inserir(){
         
         $pdo = Conexao::getInstance();
-        $stmt = $pdo->prepare('INSERT INTO usuario (nome, idade) VALUES(:nome, :idade)');
+        $stmt = $pdo->prepare('INSERT INTO usuario (nome, idade, cpf) VALUES(:nome, :idade, :cpf)');
         $stmt->bindParam(':nome', $nome, PDO::PARAM_STR);
         $stmt->bindParam(':idade', $idade, PDO::PARAM_STR);
+        $stmt->bindParam(':cpf', $cpf, PDO::PARAM_STR);
 
         $nome = $this->getnome();
         $idade = $this->getidade(); 
+        $cpf = $this->getcpf();
 
         return $stmt->execute();
         
