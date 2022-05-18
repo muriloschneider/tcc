@@ -18,28 +18,28 @@ $user->inserir();
        
 }       
     
-else if($acao == "excluir"){
+//  else if($acao == "excluir"){
 
-    $quad = new quadrado($id, "", "");
+//     $quad = new quadrado($id, "", "");
     
    
-$quad->excluir();
-header("location:index.php");
+// $quad->excluir();
+// header("location:index.php");
 
-//echo "entrou aqui  : ".$id;
+// //echo "entrou aqui  : ".$id;
 
-}
+// }
 
-else if($acao == "editar"){
+// else if($acao == "editar"){
 
-    $quad = new quadrado($id, "", "");
+//     $quad = new quadrado($id, "", "");
     
    
-$quad->editar();
-header("location:index.php");
+// $quad->editar();
+// header("location:index.php");
 
-//echo "entrou aqui  : ".$id;
+// //echo "entrou aqui  : ".$id;
 
-}
+// }
 
     ?>
