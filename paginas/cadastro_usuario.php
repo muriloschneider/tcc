@@ -8,9 +8,9 @@
 </head>
 <body>
 
-<form method="post" >
+<form method="post" action="acao_usuario.php" >
 
-    Insira seu nome:     <input type="text" name="" value=""> <br><br>
+    Insira seu nome completo:     <input type="text" name="" value=""> <br><br>
     Insira sua idade:    <input type="text" name="" value=""> <br><br>
     Insira seu CPF:    <input type="text" name="" value=""> <br><br>
 
