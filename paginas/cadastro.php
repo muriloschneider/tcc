@@ -7,6 +7,11 @@
     <title>cadastro</title>
 </head>
 <body>
-    
+
+<form method="post" >
+
+    Insira seu nome: <input type="text"> 
+
+</form>
 </body>
 </html>
