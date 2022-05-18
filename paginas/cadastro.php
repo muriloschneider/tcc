@@ -10,9 +10,12 @@
 
 <form method="post" >
 
-    Insira seu nome:     <input type="text" name="" value=""> 
-    Insira sua idade:    <input type="text" name="" value=""> 
-    Insira seu CPF:    <input type="text" name="" value=""> 
+    Insira seu nome:     <input type="text" name="" value=""> <br><br>
+    Insira sua idade:    <input type="text" name="" value=""> <br><br>
+    Insira seu CPF:    <input type="text" name="" value=""> <br><br>
+
+    <input type="submit" name="">
+    
 </form>
 </body>
 </html>
