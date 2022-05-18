@@ -14,7 +14,7 @@ if($acao == "salvar"){
     
    
 $user->inserir();
-    header("location:cadastro_usuario.php");
+    header("location:paginas../teste.php");
        
 }       
     
