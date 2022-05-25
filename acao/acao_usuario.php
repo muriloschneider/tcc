@@ -1,6 +1,6 @@
 <?php
 
-require_once "usuario.class.php";
+require_once "../classes/usuario.class.php";
 
 $acao=isset($_GET["acao"])?$_GET["acao"]:"";
 $nome=isset($_GET["nome"])?$_GET["nome"]:"";
@@ -14,7 +14,7 @@ if($acao == "salvar"){
     
    
 $user->inserir();
-    header("location:paginas../teste.php");
+    header("location:../paginas../cadastro_usuario.php");
        
 }       
     

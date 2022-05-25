@@ -1,7 +1,7 @@
 <?php
 //usuario
-include_once "conf/default.inc.php";
-    require_once "conf/Conexao.php";
+include_once "../conf/default.inc.php";
+    require_once "../conf/Conexao.php";
 
 class usuario{
     private $id;
