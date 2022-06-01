@@ -30,12 +30,27 @@
 
 $id = 0;
 
-?>
+if($acao == "editar"){
+
+ 
+    $id = isset($_GET['id_usuario']) ? $_GET['id_usuario'] : "";
+    
+    $user = new usuario($id, $nome, $idade, $cpf);
+    
+    $dados = $user->buscar($id);
+    
+    $user = new usuario($dados["id_usuario"],$dados["nome_usuario"] , $dados["idade_usuario"], $dados["cpf_usuario"]);
+    
+    }
+    ?>
+
+
 </head>
 <body>
 
 <form method="get" action="../acao/acao_usuario.php" >
 
+    id: <input readonly type="text" name="id" id="id "value="<?php if($acao == "editar") echo $user->getid();  else echo 0;?>"> <br><br>
     Insira seu nome completo:     <input type="text" name="nome" value=""> <br><br>
     Insira sua idade:    <input type="text" name="idade" value=""> <br><br>
     Insira seu CPF:    <input type="text" name="cpf" value=""> <br><br>
@@ -89,6 +104,7 @@ while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
     <td><?php echo $linha['idade_usuario'];?></td> 
     <td><?php echo $linha['cpf_usuario'];?></td> 
     <td><a href="javascript:excluirRegistro('../acao../acao_usuario.php?acao=excluir&id=<?php echo $linha['id_usuario'];?>')">deletar</a></td>
+    <td><a href='../paginas../cadastro_usuario.php?acao=editar&id=<?php echo $linha['id_usuario'];?>'>editar</a></td>
     </tr>
 </form>
 <?php } ?>

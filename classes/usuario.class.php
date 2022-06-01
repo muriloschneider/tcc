@@ -32,9 +32,9 @@ class usuario{
     
     
 
-    public function buscar($id_usuario){
+    public function buscar($id){
         $pdo = Conexao::getInstance();
-        $consulta = $pdo->query("SELECT * FROM usuario WHERE id_usuario= $id_usuario");
+        $consulta = $pdo->query("SELECT * FROM usuario WHERE id_usuario = id_usuario");
         $dados = array();
         while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
             $dados['id_usuario'] = $linha['id_usuario'];
@@ -53,19 +53,21 @@ class usuario{
         
         return $stmt->execute();
     }
-    // public function editar(){
+    public function editar(){
             
-    //     $pdo = Conexao::getInstance();
-    // $stmt = $pdo->prepare('UPDATE usuario SET id = :id WHERE id = :id');
-    // //$stmt->bindParam(':id', $id, PDO::PARAM_INT);
-    // $stmt->bindParam(':id', $this->id, PDO::PARAM_STR);
+        $pdo = Conexao::getInstance();
+        $stmt = $pdo->prepare("UPDATE `usuario` SET `nome_usuario` = :nome_usuario, `idade_usuario` = :cpf_usuario, 'idade_usuario` = :cpf_usuario WHERE (`id_usuario` = :id_usuario);");
     
+        $stmt->bindValue(':id', $this->setId($this->id), PDO::PARAM_INT);
+        $stmt->bindValue(':nome_usuario', $this->setnome($this->nome_usuario), PDO::PARAM_STR);
+        $stmt->bindValue(':idade_usuario', $this->setidade($this->idade_usuario), PDO::PARAM_STR);
+        $stmt->bindValue(':cpf_usuario', $this->setcpf($this->cpf_usuario), PDO::PARAM_STR);
 
+        return $stmt->execute();
 
-
-    //     return $stmt->execute();
+       
         
-    // }
+    }
 
     public function __toString(){
 

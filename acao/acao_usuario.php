@@ -9,16 +9,30 @@ $id=isset($_GET["id"])?$_GET["id"]:"";
 $cpf=isset($_GET["cpf"])?$_GET["cpf"]:"";
 
 if($acao == "salvar"){
+    $id=isset($_GET["id"])?$_GET["id"]:"";
 
-    $user = new usuario($id, $nome, $idade, $cpf);
+    if($acao == 0){
+
+         $user = new usuario($id, $nome, $idade, $cpf);
     
    
-$funcao = $user->inserir();
+        $funcao = $user->inserir();
     header("location:../paginas../cadastro_usuario.php");
-       
+}
+    else {
+
+        $user = new usuario($id, $nome, $idade, $cpf);
+
+    
+        $funcao = $user->editar();
+    header("location:../paginas../cadastro_usuario.php");
+
+ //echo "entrou aqui  : ".$id;
+
+}
 }       
     
- else if($acao == "excluir"){
+  if($acao == "excluir"){
 
     $user = new usuario($id, "", "", "");
     
@@ -30,16 +44,6 @@ header("location:../paginas../cadastro_usuario.php");
 
 }
 
-// else if($acao == "editar"){
 
-//     $quad = new quadrado($id, "", "");
-    
-   
-// $quad->editar();
-// header("location:index.php");
-
-// //echo "entrou aqui  : ".$id;
-
-// }
 
     ?>
