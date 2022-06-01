@@ -9,6 +9,9 @@
     include_once "../conf/default.inc.php";
     require_once "../conf/Conexao.php";
 
+    require_once "../classes../usuario.class.php";
+    require_once "../acao../acao_usuario.php";
+
     $procurar = isset($_POST["procurar"]) ? $_POST["procurar"] : ""; 
    $procura = isset($_POST["procura"]) ? $_POST["procura"] : "";
    
@@ -24,7 +27,7 @@
     Insira sua idade:    <input type="text" name="" value=""> <br><br>
     Insira seu CPF:    <input type="text" name="" value=""> <br><br>
 
-    <input type="submit" name="">
+    <input type="submit" name="acao" value="salvar">
     <table border="1"> 
 
     <tr>

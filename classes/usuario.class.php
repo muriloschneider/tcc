@@ -4,71 +4,68 @@ include_once "../conf/default.inc.php";
     require_once "../conf/Conexao.php";
 
 class usuario{
-    private $id;
-    private $nome;
-    private $idade;
-    private $cpf;
+    private $id_usuario;
+    private $nome_usuario;
+    private $idade_usuario;
+    private $cpf_usuario;
     
 
 
     public function __construct($id,$nome,$idade,$cpf){
-        $this->id = $id;
-        $this->nome = $nome;
-        $this->idade = $idade;
-        $this->cpf = $cpf;
+        $this->id_usuario = $id;
+        $this->nome_usuario = $nome;
+        $this->idade_usuario = $idade;
+        $this->cpf_usuario = $cpf;
        
     }
 
-    public function getid(){  return $this->id; }
-    public function getnome(){  return $this->nome; }
-    public function getidade(){  return $this->idade; }
-    public function getcpf(){  return $this->cpf; }
+    public function getid(){  return $this->id_usuario; }
+    public function getnome(){  return $this->nome_usuario; }
+    public function getidade(){  return $this->idade_usuario; }
+    public function getcpf(){  return $this->cpf_usuario; }
    
 
-    public function setid($id) { $this->id = $id; }
-    public function setnome($nome) { $this->nome = $nome; }
-    public function setidade($idade) { $this->idade = $idade; }
-    public function setcpf($cpf) { $this->cpf = $cpf; }
+    public function setid($id) { $this->id_usuario = $id; }
+    public function setnome($nome) { $this->nome_usuario = $nome; }
+    public function setidade($idade) { $this->idade_usuario = $idade; }
+    public function setcpf($cpf) { $this->cpf_usuario = $cpf; }
     
     
 
-    public function buscar($id){
-
-        require_once("conexao.php");
-        $query .= 'SELECT * FROM usuario';
-        $conexao = Conexao::getInstance();
-        if($id > 0){
-            $query = $query . ' WHERE id = :id';
-            $stmt->bindParam(':id',$id);
+    public function buscar($id_usuario){
+        $pdo = Conexao::getInstance();
+        $consulta = $pdo->query("SELECT * FROM usuario WHERE id_usuario= $id_usuario");
+        $dados = array();
+        while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
+            $dados['id_usuario'] = $linha['id_usuario'];
+            $dados['nome_usuario'] = $linha['nome_usuario'];
+            $dados['idade_usuario'] = $linha['idade_usuario'];
+            $dados['cpf_usuario'] = $linha['cpf_usuario'];
         }
-
-        $stmt = $conexao->prepare($query);
-        if ($stmt->execute())
-            return $stmt->fetchAll();
-        
-        return false; 
+        //var_dump($dados);
+        return $dados;
     }
 
-    function excluir(){
-        $pdo = Conexao::getInstance();
-        $stmt = $pdo ->prepare('DELETE FROM usuario WHERE id = :id');
-        $stmt->bindParam(':id', $this->id);
+    // function excluir(){
+    //     $pdo = Conexao::getInstance();
+    //     $stmt = $pdo ->prepare('DELETE FROM usuario WHERE id = :id');
+    //     $stmt->bindParam(':id', $this->id);
         
-        return $stmt->execute();
-    }
-    public function editar(){
+    //     return $stmt->execute();
+    // }
+    // public function editar(){
             
-        $pdo = Conexao::getInstance();
-    $stmt = $pdo->prepare('UPDATE usuario SET id = :id WHERE id = :id');
-    //$stmt->bindParam(':id', $id, PDO::PARAM_INT);
-    $stmt->bindParam(':id', $this->id, PDO::PARAM_STR);
+    //     $pdo = Conexao::getInstance();
+    // $stmt = $pdo->prepare('UPDATE usuario SET id = :id WHERE id = :id');
+    // //$stmt->bindParam(':id', $id, PDO::PARAM_INT);
+    // $stmt->bindParam(':id', $this->id, PDO::PARAM_STR);
     
 
 
 
-        return $stmt->execute();
+    //     return $stmt->execute();
         
-    }
+    // }
 
     public function __toString(){
 
@@ -81,15 +78,16 @@ class usuario{
     public function inserir(){
         
         $pdo = Conexao::getInstance();
-        $stmt = $pdo->prepare('INSERT INTO usuario (nome, idade, cpf) VALUES(:nome, :idade, :cpf)');
-        $stmt->bindParam(':nome', $nome, PDO::PARAM_STR);
-        $stmt->bindParam(':idade', $idade, PDO::PARAM_STR);
-        $stmt->bindParam(':cpf', $cpf, PDO::PARAM_STR);
-
+        // $stmt = $pdo->prepare('INSERT INTO usuario (id_usuario) VALUES(:id_usuario)');
+        $stmt = $pdo->prepare('INSERT INTO usuario (nome_usuario, idade_usuario, cpf_usuario) VALUES(:nome_usuario, :idade_usuario, :cpf_usuario)');
+        $stmt->bindParam(':nome_usuario', $nome, PDO::PARAM_STR);
+        $stmt->bindParam(':idade_usuario', $idade, PDO::PARAM_STR);
+        $stmt->bindParam(':cpf_usuario', $cpf, PDO::PARAM_STR);
+        //$stmt->bindParam(':id', $id, PDO::PARAM_STR);
         $nome = $this->getnome();
         $idade = $this->getidade(); 
         $cpf = $this->getcpf();
-
+        // $id = $this->getcpf();
         return $stmt->execute();
         
     }
