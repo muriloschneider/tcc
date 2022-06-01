@@ -46,13 +46,13 @@ class usuario{
         return $dados;
     }
 
-    // function excluir(){
-    //     $pdo = Conexao::getInstance();
-    //     $stmt = $pdo ->prepare('DELETE FROM usuario WHERE id = :id');
-    //     $stmt->bindParam(':id', $this->id);
+     function excluir(){
+        $pdo = Conexao::getInstance();
+        $stmt = $pdo ->prepare('DELETE FROM usuario WHERE id_usuario = :id_usuario');
+        $stmt->bindParam(':id_usuario', $this->id_usuario);
         
-    //     return $stmt->execute();
-    // }
+        return $stmt->execute();
+    }
     // public function editar(){
             
     //     $pdo = Conexao::getInstance();

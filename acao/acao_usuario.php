@@ -18,17 +18,17 @@ $funcao = $user->inserir();
        
 }       
     
-//  else if($acao == "excluir"){
+ else if($acao == "excluir"){
 
-//     $quad = new quadrado($id, "", "");
+    $user = new usuario($id, "", "", "");
     
    
-// $quad->excluir();
-// header("location:index.php");
+$funcao = $user->excluir();
+header("location:../paginas../cadastro_usuario.php");
 
-// //echo "entrou aqui  : ".$id;
+//echo "entrou aqui  : ".$id;
 
-// }
+}
 
 // else if($acao == "editar"){
 
