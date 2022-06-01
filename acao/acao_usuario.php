@@ -10,10 +10,10 @@ $cpf=isset($_GET["cpf"])?$_GET["cpf"]:"";
 
 if($acao == "salvar"){
 
-    $user = new usuario("0", $nome, $idade, $cpf);
+    $user = new usuario($id, $nome, $idade, $cpf);
     
    
-$user->inserir();
+$funcao = $user->inserir();
     header("location:../paginas../cadastro_usuario.php");
        
 }       
