@@ -95,31 +95,6 @@ class usuario{
     }
 
 
-//     public function calcular_area(){
-
-//           $area = $this->nome * $this->nome;
-
-//           return $area;
-
-// //ou   return $this->nome * $this->nome;
-
-// }
-
-// public function calcular_perimetro(){
-
-//           $perimetro = $this->nome * 4;
-
-//           return $perimetro;
-
-// }
-
-// public function calcular_diagonal(){
-
-//     $diagonal = $this->nome * 1.44;
-    
-//     return $diagonal;
-
-//     }
 
 
 }
