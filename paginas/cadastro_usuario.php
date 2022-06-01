@@ -28,6 +28,8 @@
     $acao = isset($_GET['acao']) ? $_GET['acao'] : "";
     $id = isset($_GET['id']) ? $_GET['id'] : "";
 
+    $user = new usuario("1", "", "", "");
+
 $id = 0;
 
 if($acao == "editar"){
@@ -51,9 +53,9 @@ if($acao == "editar"){
 <form method="get" action="../acao/acao_usuario.php" >
 
     id: <input readonly type="text" name="id" id="id "value="<?php if($acao == "editar") echo $user->getid();  else echo 0;?>"> <br><br>
-    Insira seu nome completo:     <input type="text" name="nome" value=""> <br><br>
-    Insira sua idade:    <input type="text" name="idade" value=""> <br><br>
-    Insira seu CPF:    <input type="text" name="cpf" value=""> <br><br>
+    Insira seu nome completo:     <input type="text" name="nome" value="<?php if($acao == "editar") echo $user->getnome();  else echo "";?>"> <br><br>
+    Insira sua idade:    <input type="text" name="idade" value="<?php if($acao == "editar") echo $user->getidade();  else echo "";?>"> <br><br>
+    Insira seu CPF:    <input type="text" name="cpf" value="<?php if($acao == "editar") echo $user->getcpf();  else echo "";?>"> <br><br>
 
     <input type="submit" name="acao" value="salvar">
     <table border="1"> 

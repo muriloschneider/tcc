@@ -56,12 +56,12 @@ class usuario{
     public function editar(){
             
         $pdo = Conexao::getInstance();
-        $stmt = $pdo->prepare("UPDATE `usuario` SET `nome_usuario` = :nome_usuario, `idade_usuario` = :cpf_usuario, 'idade_usuario` = :cpf_usuario WHERE (`id_usuario` = :id_usuario);");
+        $stmt = $pdo->prepare("UPDATE `usuario` SET `nome_usuario` = :nome_usuario, `idade_usuario` = :idade_usuario, `cpf_usuario` = :cpf_usuario WHERE (`id_usuario` = :id_usuario);");
     
-        $stmt->bindValue(':id', $this->setId($this->id), PDO::PARAM_INT);
-        $stmt->bindValue(':nome_usuario', $this->setnome($this->nome_usuario), PDO::PARAM_STR);
-        $stmt->bindValue(':idade_usuario', $this->setidade($this->idade_usuario), PDO::PARAM_STR);
-        $stmt->bindValue(':cpf_usuario', $this->setcpf($this->cpf_usuario), PDO::PARAM_STR);
+        $stmt->bindValue(':id_usuario', $this->getId(), PDO::PARAM_INT);
+        $stmt->bindValue(':nome_usuario', $this->getnome(), PDO::PARAM_STR);
+        $stmt->bindValue(':idade_usuario', $this->getidade(), PDO::PARAM_STR);
+        $stmt->bindValue(':cpf_usuario', $this->getcpf(), PDO::PARAM_STR);
 
         return $stmt->execute();
 

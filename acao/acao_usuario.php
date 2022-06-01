@@ -11,7 +11,7 @@ $cpf=isset($_GET["cpf"])?$_GET["cpf"]:"";
 if($acao == "salvar"){
     $id=isset($_GET["id"])?$_GET["id"]:"";
 
-    if($acao == 0){
+    if($id == 0){
 
          $user = new usuario($id, $nome, $idade, $cpf);
     
