@@ -6,41 +6,45 @@ include_once "../conf/default.inc.php";
 class usuario{
     private $id_usuario;
     private $nome_usuario;
-    private $idade_usuario;
-    private $cpf_usuario;
-    
+    private $login_usuario;
+    private $email_usuario;
+    private $data_nascimento;
 
 
-    public function __construct($id,$nome,$idade,$cpf){
-        $this->id_usuario = $id;
-        $this->nome_usuario = $nome;
-        $this->idade_usuario = $idade;
-        $this->cpf_usuario = $cpf;
+    public function __construct($id_usuario,$nome_usuario,$login_usuario,$email_usuario,$data_nascimento){
+        $this->id_usuario = $id_usuario;
+        $this->nome_usuario = $nome_usuario;
+        $this->login_usuario = $login_usuario;
+        $this->email_usuario = $email_usuario;
+        $this->data_nascimento = $data_nascimento;
        
     }
 
-    public function getid(){  return $this->id_usuario; }
-    public function getnome(){  return $this->nome_usuario; }
-    public function getidade(){  return $this->idade_usuario; }
-    public function getcpf(){  return $this->cpf_usuario; }
-   
+    public function getid_usuario(){  return $this->id_usuario; }
+    public function getnome_usuario(){  return $this->nome_usuario; }
+    public function getlogin_usuario(){  return $this->login_usuario; }
+    public function getemail_usuario(){  return $this->email_usuario; }
+    public function getdata_nascimento(){  return $this->data_nascimento; }
 
-    public function setid($id) { $this->id_usuario = $id; }
-    public function setnome($nome) { $this->nome_usuario = $nome; }
-    public function setidade($idade) { $this->idade_usuario = $idade; }
-    public function setcpf($cpf) { $this->cpf_usuario = $cpf; }
-    
+    public function setid_usuario($id_usuario) { $this->id_usuario = $id_usuario; }
+    public function setnome_usuario($nome_usuario) { $this->nome_usuario = $nome_usuario; }
+    public function setlogin_usuario($login_usuario) { $this->login_usuario = $login_usuario; }
+    public function setemail_usuario($email_usuario) { $this->email_usuario = $email_usuario; }
+    public function setdata_nascimento($data_nascimento) { $this->data_nascimento = $data_nascimento; }
+
     
 
-    public function buscar($id){
+    public function buscar($id_usuario){
         $pdo = Conexao::getInstance();
         $consulta = $pdo->query("SELECT * FROM usuario WHERE id_usuario = id_usuario");
         $dados = array();
         while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
             $dados['id_usuario'] = $linha['id_usuario'];
             $dados['nome_usuario'] = $linha['nome_usuario'];
-            $dados['idade_usuario'] = $linha['idade_usuario'];
-            $dados['cpf_usuario'] = $linha['cpf_usuario'];
+            $dados['login_usuario'] = $linha['login_usuario'];
+            $dados['email_usuario'] = $linha['email_usuario'];
+            $dados['data_nascimento'] = $linha['data_nascimento'];
+
         }
         //var_dump($dados);
         return $dados;
@@ -56,12 +60,14 @@ class usuario{
     public function editar(){
             
         $pdo = Conexao::getInstance();
-        $stmt = $pdo->prepare("UPDATE `usuario` SET `nome_usuario` = :nome_usuario, `idade_usuario` = :idade_usuario, `cpf_usuario` = :cpf_usuario WHERE (`id_usuario` = :id_usuario);");
+        $stmt = $pdo->prepare("UPDATE `usuario` SET `nome_usuario` = :nome_usuario, `login_usuario` = :login_usuario, `email_usuario` = :email_usuario, `data_nascimento` = :data_nascimento WHERE (`id_usuario` = :id_usuario);");
     
-        $stmt->bindValue(':id_usuario', $this->getId(), PDO::PARAM_INT);
-        $stmt->bindValue(':nome_usuario', $this->getnome(), PDO::PARAM_STR);
-        $stmt->bindValue(':idade_usuario', $this->getidade(), PDO::PARAM_STR);
-        $stmt->bindValue(':cpf_usuario', $this->getcpf(), PDO::PARAM_STR);
+        $stmt->bindValue(':id_usuario', $this->getid_usuario(), PDO::PARAM_INT);
+        $stmt->bindValue(':nome_usuario', $this->getnome_usuario(), PDO::PARAM_STR);
+        $stmt->bindValue(':login_usuario', $this->getlogin_usuario(), PDO::PARAM_STR);
+        $stmt->bindValue(':email_usuario', $this->getemail_usuario(), PDO::PARAM_STR);
+        $stmt->bindValue(':data_nascimento', $this->getdata_nascimento(), PDO::PARAM_STR);
+
 
         return $stmt->execute();
 
@@ -71,10 +77,11 @@ class usuario{
 
     public function __toString(){
 
-        return  "<br> nome: ".$this->getnome().
-        "<br> idade: ".$this->getidade().
-        "<br> id: ".$this->getid().
-        "<br> cpf: ".$this->getcpf();
+        return  "<br> id: ".$this->getid_usuario().
+                "<br> nome: ".$this->getnome_usuario().
+                "<br> login: ".$this->getlogin_usuario().
+                "<br> email: ".$this->getemail_usuario().
+                "<br> data nascimento: ".$this->getdata_nascimento();
     }
 
     public function inserir(){
