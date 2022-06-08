@@ -3,44 +3,48 @@
 require_once "../classes/usuario.class.php";
 
 $acao=isset($_GET["acao"])?$_GET["acao"]:"";
-$nome=isset($_GET["nome"])?$_GET["nome"]:"";
-$idade=isset($_GET["idade"])?$_GET["idade"]:"";
-$id=isset($_GET["id"])?$_GET["id"]:"";
-$cpf=isset($_GET["cpf"])?$_GET["cpf"]:"";
+$id_usuario=isset($_GET["id_usuario"])?$_GET["id_usuario"]:"";
+$nome_usuario=isset($_GET["nome_usuario"])?$_GET["nome_usuario"]:"";
+$login_usuario=isset($_GET["login_usuario"])?$_GET["login_usuario"]:"";
+$email_usuario=isset($_GET["email_usuario"])?$_GET["email_usuario"]:"";
+$data_nascimento=isset($_GET["data_nascimento"])?$_GET["data_nascimento"]:"";
+$id_usuario=isset($_GET["id_usuario"])?$_GET["id_usuario"]:"";
+
+$user = new usuario($id_usuario, $nome_usuario, $login_usuario, $email_usuario, $data_nascimento);
+
 
 if($acao == "salvar"){
-    $id=isset($_GET["id"])?$_GET["id"]:"";
 
-    if($id == 0){
+    if($id_usuario == 0){
 
-         $user = new usuario($id, $nome, $idade, $cpf);
+         $user = new usuario($id_usuario, $nome_usuario, $login_usuario, $email_usuario, $data_nascimento);
     
    
         $funcao = $user->inserir();
-    header("location:../paginas../cadastro_usuario.php");
 }
     else {
 
-        $user = new usuario($id, $nome, $idade, $cpf);
+        $user = new usuario($id_usuario, $nome_usuario, $login_usuario, $email_usuario, $data_nascimento);
 
     
         $funcao = $user->editar();
-    header("location:../paginas../cadastro_usuario.php");
 
- //echo "entrou aqui  : ".$id;
+ //echo "entrou aqui  : ".$id_usuario;
 
 }
+header("location:../paginas../cadastro_usuario.php");
+
 }       
     
   if($acao == "excluir"){
 
-    $user = new usuario($id, "", "", "");
+    $user = new usuario($id_usuario, "", "", "", "");
     
    
 $funcao = $user->excluir();
 header("location:../paginas../cadastro_usuario.php");
 
-//echo "entrou aqui  : ".$id;
+//echo "entrou aqui  : ".$id_usuario;
 
 }
 

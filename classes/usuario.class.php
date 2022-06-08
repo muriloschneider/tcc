@@ -53,7 +53,7 @@ class usuario{
      function excluir(){
         $pdo = Conexao::getInstance();
         $stmt = $pdo ->prepare('DELETE FROM usuario WHERE id_usuario = :id_usuario');
-        $stmt->bindParam(':id_usuario', $this->id_usuario);
+        $stmt->bindParam(':id_usuario', $this->getid_usuario());
         
         return $stmt->execute();
     }
@@ -88,15 +88,18 @@ class usuario{
         
         $pdo = Conexao::getInstance();
         // $stmt = $pdo->prepare('INSERT INTO usuario (id_usuario) VALUES(:id_usuario)');
-        $stmt = $pdo->prepare('INSERT INTO usuario (nome_usuario, idade_usuario, cpf_usuario) VALUES(:nome_usuario, :idade_usuario, :cpf_usuario)');
-        $stmt->bindParam(':nome_usuario', $nome, PDO::PARAM_STR);
-        $stmt->bindParam(':idade_usuario', $idade, PDO::PARAM_STR);
-        $stmt->bindParam(':cpf_usuario', $cpf, PDO::PARAM_STR);
+        $stmt = $pdo->prepare('INSERT INTO usuario (nome_usuario, login_usuario, email_usuario, data_nascimento) VALUES(:nome_usuario, :login_usuario, :email_usuario, :data_nascimento)');
+        $stmt->bindParam(':nome_usuario', $this->getnome_usuario(), PDO::PARAM_STR);
+        $stmt->bindParam(':login_usuario', $this->getlogin_usuario(), PDO::PARAM_STR);
+        $stmt->bindParam(':email_usuario', $this->getemail_usuario(), PDO::PARAM_STR);
+        $stmt->bindParam(':data_nascimento', $this->getdata_nascimento(), PDO::PARAM_STR);
+
         //$stmt->bindParam(':id', $id, PDO::PARAM_STR);
-        $nome = $this->getnome();
-        $idade = $this->getidade(); 
-        $cpf = $this->getcpf();
-        // $id = $this->getcpf();
+        // $nome_usuario = $this->getnome_usuario();
+        // $login_usuario = $this->getlogin_usuario(); 
+        // $email_usuario = $this->getemail_usuario();
+        // $data_nascimento = $this->getdata_nascimento();
+
         return $stmt->execute();
         
     }
