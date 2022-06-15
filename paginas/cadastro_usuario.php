@@ -52,11 +52,11 @@ if($acao == "editar"){
 
 <form method="get" action="../acao/acao_usuario.php" >
 
-    id: <input readonly type="text" name="id" id="id "value="<?php if($acao == "editar") echo $user->getid_usuario();  else echo 0;?>"> <br><br>
-    Insira seu nome completo:     <input type="text" name="nome" value="<?php if($acao == "editar") echo $user->getnome_usuario();  else echo "";?>"> <br><br>
-    Insira seu login:     <input type="text" name="login" value="<?php if($acao == "editar") echo $user->getlogin_usuario();  else echo "";?>"> <br><br>
-    Insira seu email:     <input type="text" name="email" value="<?php if($acao == "editar") echo $user->getemail_usuario();  else echo "";?>"> <br><br>
-    Insira sua data de nascimento:    <input type="text" name="data" value="<?php if($acao == "editar") echo $user->getdata_nascimento();  else echo "";?>"> <br><br>
+    id: <input readonly type="text" name="id_usuario"  value="<?php if($acao == "editar") echo $user->getid_usuario();  else echo 0;?>"> <br><br>
+    Insira seu nome completo:      <input type="text" name="nome_usuario" value="<?php if($acao == "editar") echo $user->getnome_usuario();  else echo "";?>"> <br><br>
+    Insira seu login:              <input type="text" name="login_usuario" value="<?php if($acao == "editar") echo $user->getlogin_usuario();  else echo "";?>"> <br><br>
+    Insira seu email:              <input type="text" name="email_usuario" value="<?php if($acao == "editar") echo $user->getemail_usuario();  else echo "";?>"> <br><br>
+    Insira sua data de nascimento: <input type="text" name="data_nascimento" value="<?php if($acao == "editar") echo $user->getdata_nascimento();  else echo "";?>"> <br><br>
 
     <input type="submit" name="acao" value="salvar">
 </form>
