@@ -104,9 +104,41 @@ class usuario{
         
     }
 
+    public function listar($tipo = 0, $procurar = ""){
+        
+        $pdo = Conexao::getInstance();
 
+        if($tipo==""){
+            $tipo = $pdo->query("SELECT * FROM usuario 
+                                     WHERE id_usuario LIKE '$procurar%'
+                                     ORDER BY id_usuario");
+        }
+       
+         else if($tipo=="pro1"){
+            $tipo = $pdo->query("SELECT * FROM usuario 
+                                     WHERE nome_usuario LIKE '$procurar%'
+                                     ORDER BY nome_usuario");
+        }
+       
+         else if($tipo=="pro2"){
+            $tipo = $pdo->query("SELECT * FROM usuario 
+                                     WHERE login_usuario LIKE '$procurar%' 
+                                     ORDER BY login_usuario");
+        }
+       
+        else if($tipo=="pro3"){
+            $tipo = $pdo->query("SELECT * FROM usuario 
+                                     WHERE email_usuario LIKE '$procurar%' 
+                                     ORDER BY email_usuario");
+        }
+        else if($tipo=="pro4"){
+            $tipo = $pdo->query("SELECT * FROM usuario 
+                                     WHERE data_nascimento LIKE '$procurar%' 
+                                     ORDER BY data_nascimento");
+       }
+       
 
-
+    }
 }
 
 ?>

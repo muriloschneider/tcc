@@ -22,6 +22,8 @@
 
     $procurar = isset($_POST["procurar"]) ? $_POST["procurar"] : ""; 
    $procura = isset($_POST["procura"]) ? $_POST["procura"] : "";
+   $consulta = isset($_POST["consulta"]) ? $_POST["consulta"] : "";
+
    
     $tipo = isset($_POST['tipo']) ? $_POST['tipo'] : 1;
 
@@ -75,36 +77,7 @@ if($acao == "editar"){
     <?php
 
  $pdo = Conexao::getInstance();
- if($procura==""){
-     $consulta = $pdo->query("SELECT * FROM usuario 
-                              WHERE id_usuario LIKE '$procurar%'
-                              ORDER BY id_usuario");
- }
-
-  else if($procura=="pro1"){
-     $consulta = $pdo->query("SELECT * FROM usuario 
-                              WHERE nome_usuario LIKE '$procurar%'
-                              ORDER BY nome_usuario");
- }
-
-  else if($procura=="pro2"){
-     $consulta = $pdo->query("SELECT * FROM usuario 
-                              WHERE login_usuario LIKE '$procurar%' 
-                              ORDER BY login_usuario");
- }
-
- else if($procura=="pro3"){
-     $consulta = $pdo->query("SELECT * FROM usuario 
-                              WHERE email_usuario LIKE '$procurar%' 
-                              ORDER BY email_usuario");
- }
- else if($procura=="pro4"){
-     $consulta = $pdo->query("SELECT * FROM usuario 
-                              WHERE data_nascimento LIKE '$procurar%' 
-                              ORDER BY data_nascimento");
-}
-
-
+ $consulta = $user->listar($tipo, $procurar);
     
 while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
     ?>
