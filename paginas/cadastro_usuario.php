@@ -56,7 +56,7 @@ if($acao == "editar"){
 
     id: <input readonly type="text" name="id_usuario"  value="<?php if($acao == "editar") echo $user->getid_usuario();  else echo 0;?>"> <br><br>
     Insira seu nome completo:      <input type="text" name="nome_usuario" value="<?php if($acao == "editar") echo $user->getnome_usuario();  else echo "";?>"> <br><br>
-    Insira seu login:              <input type="text" name="login_usuario" value="<?php if($acao == "editar") echo $user->getlogin_usuario();  else echo "";?>"> <br><br>
+    Insira seu nome de login:              <input type="text" name="login_usuario" value="<?php if($acao == "editar") echo $user->getlogin_usuario();  else echo "";?>"> <br><br>
     Insira seu email:              <input type="text" name="email_usuario" value="<?php if($acao == "editar") echo $user->getemail_usuario();  else echo "";?>"> <br><br>
     Insira sua data de nascimento: <input type="text" name="data_nascimento" value="<?php if($acao == "editar") echo $user->getdata_nascimento();  else echo "";?>"> <br><br>
 
@@ -77,9 +77,12 @@ if($acao == "editar"){
     <?php
 
  $pdo = Conexao::getInstance();
- $consulta = $user->listar($tipo, $procurar);
+//  $consulta = $user->listar($tipo, $procurar);
     
-while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
+// while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
+
+    $consulta = usuario::listar($tipo, $procurar);
+foreach($consulta as $linha){
     ?>
 
     <tr><td><?php echo $linha['id_usuario'];?></td>
