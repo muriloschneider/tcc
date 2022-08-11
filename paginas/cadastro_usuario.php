@@ -76,7 +76,7 @@ if($acao == "editar"){
 
     <?php
 
- $pdo = Conexao::getInstance();
+ //$pdo = Conexao::getInstance();
 //  $consulta = $user->listar($tipo, $procurar);
     
 // while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
