@@ -2,6 +2,8 @@
 //usuario
 include_once "../conf/default.inc.php";
     require_once "../conf/Conexao.php";
+    require_once "../classes/databased.class.php";
+
 
 class usuario{
     private $id_usuario;
@@ -141,7 +143,7 @@ class usuario{
        $par = array(':procurar'=>$procurar);
        else
        $par = array();
-       return parent::buscar($sql, $par);
+       return parent::dbuscar($sql, $par);
        
        //var_dump($tipo);
        return $tipo;
