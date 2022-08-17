@@ -60,9 +60,9 @@ if($acao == "editar"){
 
     id: <input readonly type="text" name="id_usuario"  value="<?php if($acao == "editar") echo $user->getid_usuario();  else echo 0;?>"> <br><br>
     Insira seu nome completo:      <input type="text" name="nome_usuario" value="<?php if($acao == "editar") echo $user->getnome_usuario();  else echo "";?>"> <br><br>
-    Insira seu nome de login:              <input type="text" name="login_usuario" value="<?php if($acao == "editar") echo $user->getlogin_usuario();  else echo "";?>"> <br><br>
+    Insira seu nome de login:      <input type="text" name="login_usuario" value="<?php if($acao == "editar") echo $user->getlogin_usuario();  else echo "";?>"> <br><br>
     Insira seu email:              <input type="text" name="email_usuario" value="<?php if($acao == "editar") echo $user->getemail_usuario();  else echo "";?>"> <br><br>
-    Insira sua data de nascimento: <input type="date" name="data_nascimento" value="<?php if($acao == "editar") echo $user->getdata_nascimento();  else echo "";?>"> <br><br>
+    Insira sua senha:              <input type="text" name="senha" value="<?php if($acao == "editar") echo $user->getsenha();  else echo "";?>"> <br><br>
 
     <input type="submit" name="acao" value="salvar">
 </form>
@@ -74,7 +74,7 @@ if($acao == "editar"){
     <th>nome</th>
     <th>login</th>
     <th>email</th>
-    <th>data de nascimento</th>
+    <th>senha</th>
 
 </tr>
 
@@ -93,7 +93,10 @@ foreach($consulta as $linha){
     <td><?php echo $linha['nome_usuario'];?></td> 
     <td><?php echo $linha['login_usuario'];?></td> 
     <td><?php echo $linha['email_usuario'];?></td> 
-    <td><?php echo $linha['data_nascimento'];?></td> 
+    <td><?php echo $linha['senha'];?></td> 
+    <td><?php echo $linha['sobre'];?></td> 
+    <td><?php echo $linha['regiao'];?></td> 
+    <td><?php echo $linha['site'];?></td> 
 
     <td><a href="javascript:excluirRegistro('../acao/acao_usuario.php?acao=excluir&id_usuario=<?php echo $linha['id_usuario'];?>')">deletar</a></td>
     <td><a href='../paginas../cadastro_usuario.php?acao=editar&id=<?php echo $linha['id_usuario'];?>'>editar</a></td>
