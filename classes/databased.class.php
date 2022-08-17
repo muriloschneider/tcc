@@ -38,7 +38,7 @@ $stmt->bindValue($chave, $valor);
 //salvar
     public static function buscar($stmt, $parametros=array()){
 
-        var_dump($stmt);
+        //var_dump($stmt);
         $conexao = self::iniciaconexao();
         $stmt = $conexao->prepare($stmt);
         $stmt = self::vinculaparametros($stmt, $parametros);

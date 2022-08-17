@@ -130,42 +130,42 @@ class usuario extends databased{
                                      ORDER BY id_usuario";
         }
        
-         else if($tipo=="pro1"){
+         else if($tipo=="pro2"){
             $sql = "SELECT * FROM usuario 
                                      WHERE nome_usuario LIKE '$procurar%'
                                      ORDER BY nome_usuario";
         }
        
-         else if($tipo=="pro2"){
+         else if($tipo=="pro3"){
             $sql = "SELECT * FROM usuario 
                                      WHERE login_usuario LIKE '$procurar%' 
                                      ORDER BY login_usuario";
         }
        
-        else if($tipo=="pro3"){
+        else if($tipo=="pro4"){
             $sql = "SELECT * FROM usuario 
                                      WHERE email_usuario LIKE '$procurar%' 
                                      ORDER BY email_usuario";
         }
-        else if($tipo=="pro4"){
+        else if($tipo=="pro5"){
             $sql = "SELECT * FROM usuario 
                                      WHERE senha LIKE '$procurar%' 
                                      ORDER BY senha";
        }
 
-       else if($tipo=="pro5"){
+       else if($tipo=="pro6"){
         $sql = "SELECT * FROM usuario 
                                  WHERE sobre LIKE '$procurar%' 
                                  ORDER BY sobre";
         } 
    
-        else if($tipo=="pro6"){
+        else if($tipo=="pro7"){
         $sql = "SELECT * FROM usuario 
                              WHERE regiao LIKE '$procurar%' 
                              ORDER BY regiao";
         } 
 
-        else if($tipo=="pro7"){
+        else if($tipo=="pro8"){
         $sql = "SELECT * FROM usuario 
                              WHERE site LIKE '$procurar%' 
                              ORDER BY site";

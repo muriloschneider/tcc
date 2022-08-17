@@ -16,12 +16,6 @@
 
     <?php
 
-        // $var = "jjhhyg";
-        // echo $var;
-        // $sha = sha1($var);
-        // echo " - ". $sha;
-
-
     include_once "../conf/default.inc.php";
     require_once "../conf/Conexao.php";
     require_once "../classes../usuario.class.php";
@@ -34,7 +28,7 @@
     $acao = isset($_GET['acao']) ? $_GET['acao'] : "";
     $id_usuario = isset($_GET['id_usuario']) ? $_GET['id_usuario'] : "";
 
-    $user = new usuario($id_usuario, $nome_usuario, $login_usuario, $email_usuario, $data_nascimento);
+    $user = new usuario($id_usuario, $nome_usuario, $login_usuario, $email_usuario, $senha, $sobre, $regiao, $site);
 
 $id_usuario = 0;
 
@@ -43,11 +37,11 @@ if($acao == "editar"){
  
     $id_usuario = isset($_GET['id_usuario']) ? $_GET['id_usuario'] : "";
     
-    $user = new usuario($id_usuario, $nome_usuario, $login_usuario, $email_usuario, $data_nascimento);
+    $user = new usuario($id_usuario, $nome_usuario, $login_usuario, $email_usuario, $senha, $sobre, $regiao, $site);
     
     $dados = $user->buscar($id_usuario);
     
-    $user = new usuario($dados["id_usuario"],$dados["nome_usuario"] , $dados["login_usuario"], $dados["email_usuario"], $dados["data_nascimento"]);
+    $user = new usuario($dados["id_usuario"],$dados["nome_usuario"] , $dados["login_usuario"], $dados["email_usuario"], $dados["senha"], $dados["sobre"], $dados["regiao"], $dados["site"]);
     
     }
     ?>
@@ -63,6 +57,9 @@ if($acao == "editar"){
     Insira seu nome de login:      <input type="text" name="login_usuario" value="<?php if($acao == "editar") echo $user->getlogin_usuario();  else echo "";?>"> <br><br>
     Insira seu email:              <input type="text" name="email_usuario" value="<?php if($acao == "editar") echo $user->getemail_usuario();  else echo "";?>"> <br><br>
     Insira sua senha:              <input type="text" name="senha" value="<?php if($acao == "editar") echo $user->getsenha();  else echo "";?>"> <br><br>
+    Insira sobre você:              <input type="text" name="sobre" value="<?php if($acao == "editar") echo $user->getsobre();  else echo "";?>"> <br><br>
+    Insira sua regiao:              <input type="text" name="regiao" value="<?php if($acao == "editar") echo $user->getregiao();  else echo "";?>"> <br><br>
+    Insira seu site:              <input type="text" name="site" value="<?php if($acao == "editar") echo $user->getsite();  else echo "";?>"> <br><br>
 
     <input type="submit" name="acao" value="salvar">
 </form>
@@ -75,6 +72,10 @@ if($acao == "editar"){
     <th>login</th>
     <th>email</th>
     <th>senha</th>
+    <th>sobre</th>
+    <th>regiao</th>
+    <th>site</th>
+
 
 </tr>
 
