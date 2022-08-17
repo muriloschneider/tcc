@@ -5,7 +5,7 @@ include_once "../conf/default.inc.php";
     require_once "../classes/databased.class.php";
 
 
-class usuario{
+class usuario extends databased{
     private $id_usuario;
     private $nome_usuario;
     private $login_usuario;
@@ -36,21 +36,21 @@ class usuario{
 
     
 
-    public function buscar($id_usuario){
-        $pdo = Conexao::getInstance();
-        $consulta = $pdo->query("SELECT * FROM usuario WHERE id_usuario = id_usuario");
-        $dados = array();
-        while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
-            $dados['id_usuario'] = $linha['id_usuario'];
-            $dados['nome_usuario'] = $linha['nome_usuario'];
-            $dados['login_usuario'] = $linha['login_usuario'];
-            $dados['email_usuario'] = $linha['email_usuario'];
-            $dados['data_nascimento'] = $linha['data_nascimento'];
+    // public function Dbuscar($id_usuario){
+    //     $pdo = Conexao::getInstance();
+    //     $consulta = $pdo->query("SELECT * FROM usuario WHERE id_usuario = id_usuario");
+    //     $dados = array();
+    //     while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
+    //         $dados['id_usuario'] = $linha['id_usuario'];
+    //         $dados['nome_usuario'] = $linha['nome_usuario'];
+    //         $dados['login_usuario'] = $linha['login_usuario'];
+    //         $dados['email_usuario'] = $linha['email_usuario'];
+    //         $dados['data_nascimento'] = $linha['data_nascimento'];
 
-        }
-        //var_dump($dados);
-        return $dados;
-    }
+    //     }
+    //     //var_dump($dados);
+    //     return $dados;
+    // }
 
      function excluir(){
         $pdo = Conexao::getInstance();
@@ -111,42 +111,42 @@ class usuario{
         $pdo = Conexao::getInstance();
 
         if($tipo==""){
-            $sql = $pdo->query("SELECT * FROM usuario 
+            $sql = "SELECT * FROM usuario 
                                      WHERE id_usuario LIKE '$procurar%'
-                                     ORDER BY id_usuario");
+                                     ORDER BY id_usuario";
         }
        
          else if($tipo=="pro1"){
-            $sql = $pdo->query("SELECT * FROM usuario 
+            $sql = "SELECT * FROM usuario 
                                      WHERE nome_usuario LIKE '$procurar%'
-                                     ORDER BY nome_usuario");
+                                     ORDER BY nome_usuario";
         }
        
          else if($tipo=="pro2"){
-            $sql = $pdo->query("SELECT * FROM usuario 
+            $sql = "SELECT * FROM usuario 
                                      WHERE login_usuario LIKE '$procurar%' 
-                                     ORDER BY login_usuario");
+                                     ORDER BY login_usuario";
         }
        
         else if($tipo=="pro3"){
-            $sql = $pdo->query("SELECT * FROM usuario 
+            $sql = "SELECT * FROM usuario 
                                      WHERE email_usuario LIKE '$procurar%' 
-                                     ORDER BY email_usuario");
+                                     ORDER BY email_usuario";
         }
         else if($tipo=="pro4"){
-            $sql = $pdo->query("SELECT * FROM usuario 
+            $sql = "SELECT * FROM usuario 
                                      WHERE data_nascimento LIKE '$procurar%' 
-                                     ORDER BY data_nascimento");
+                                     ORDER BY data_nascimento";
        }
        
        if ($tipo > 0)
-       $par = array(':procurar'=>$procurar);
+        $par = array(':procurar'=>$procurar);
        else
-       $par = array();
-       return parent::dbuscar($sql, $par);
+        $par = array();
+       return parent::buscar($sql, $par);
        
        //var_dump($tipo);
-       return $tipo;
+    //    return $tipo;
 
     }
 }

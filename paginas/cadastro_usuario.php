@@ -13,20 +13,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cadastro</title>
-<?php
+
+    <?php
+
+        // $var = "jjhhyg";
+        // echo $var;
+        // $sha = sha1($var);
+        // echo " - ". $sha;
+
+
     include_once "../conf/default.inc.php";
     require_once "../conf/Conexao.php";
-
     require_once "../classes../usuario.class.php";
     require_once "../acao../acao_usuario.php";
 
     $procurar = isset($_POST["procurar"]) ? $_POST["procurar"] : ""; 
-   $procura = isset($_POST["procura"]) ? $_POST["procura"] : "";
-   $consulta = isset($_POST["consulta"]) ? $_POST["consulta"] : "";
-
-   
-    $tipo = isset($_POST['tipo']) ? $_POST['tipo'] : 1;
-
+    $procura = isset($_POST["procura"]) ? $_POST["procura"] : "";
+    $consulta = isset($_POST["consulta"]) ? $_POST["consulta"] : "";
+    $tipo = isset($_POST['tipo']) ? $_POST['tipo'] : "";
     $acao = isset($_GET['acao']) ? $_GET['acao'] : "";
     $id_usuario = isset($_GET['id_usuario']) ? $_GET['id_usuario'] : "";
 
@@ -58,7 +62,7 @@ if($acao == "editar"){
     Insira seu nome completo:      <input type="text" name="nome_usuario" value="<?php if($acao == "editar") echo $user->getnome_usuario();  else echo "";?>"> <br><br>
     Insira seu nome de login:              <input type="text" name="login_usuario" value="<?php if($acao == "editar") echo $user->getlogin_usuario();  else echo "";?>"> <br><br>
     Insira seu email:              <input type="text" name="email_usuario" value="<?php if($acao == "editar") echo $user->getemail_usuario();  else echo "";?>"> <br><br>
-    Insira sua data de nascimento: <input type="text" name="data_nascimento" value="<?php if($acao == "editar") echo $user->getdata_nascimento();  else echo "";?>"> <br><br>
+    Insira sua data de nascimento: <input type="date" name="data_nascimento" value="<?php if($acao == "editar") echo $user->getdata_nascimento();  else echo "";?>"> <br><br>
 
     <input type="submit" name="acao" value="salvar">
 </form>
