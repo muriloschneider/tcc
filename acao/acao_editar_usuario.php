@@ -35,7 +35,7 @@ if($acao == "salvar"){
  //echo "entrou aqui  : ".$id_usuario;
 
 }
-header("location:../paginas../cadastro_usuario.php");
+header("location:../paginas../editar_usuario.php");
 
 }       
     
@@ -45,7 +45,7 @@ header("location:../paginas../cadastro_usuario.php");
     
    
 $funcao = $user->excluir();
-header("location:../paginas../cadastro_usuario.php");
+header("location:../paginas../editar_usuario.php");
 
 //echo "entrou aqui  : ".$id_usuario;
 

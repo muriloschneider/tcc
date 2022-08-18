@@ -19,7 +19,7 @@
     include_once "../conf/default.inc.php";
     require_once "../conf/Conexao.php";
     require_once "../classes../usuario.class.php";
-    require_once "../acao../acao_usuario.php";
+    require_once "../acao../acao_editar_usuario.php";
 
     $procurar = isset($_POST["procurar"]) ? $_POST["procurar"] : ""; 
     $procura = isset($_POST["procura"]) ? $_POST["procura"] : "";
@@ -50,7 +50,7 @@ if($acao == "editar"){
 </head>
 <body>
 
-<form method="get" action="../acao/acao_usuario.php" >
+<form method="get" action="../acao/acao_editar_usuario.php" >
 
     id: <input readonly type="text" name="id_usuario"  value="<?php if($acao == "editar") echo $user->getid_usuario();  else echo 0;?>"> <br><br>
     Insira seu nome completo:      <input type="text" name="nome_usuario" value="<?php if($acao == "editar") echo $user->getnome_usuario();  else echo "";?>"> <br><br>
@@ -99,8 +99,8 @@ foreach($consulta as $linha){
     <td><?php echo $linha['regiao'];?></td> 
     <td><?php echo $linha['site'];?></td> 
 
-    <td><a href="javascript:excluirRegistro('../acao/acao_usuario.php?acao=excluir&id_usuario=<?php echo $linha['id_usuario'];?>')">deletar</a></td>
-    <td><a href='../paginas../cadastro_usuario.php?acao=editar&id=<?php echo $linha['id_usuario'];?>'>editar</a></td>
+    <td><a href="javascript:excluirRegistro('../acao/acao_editar_usuario.php?acao=excluir&id_usuario=<?php echo $linha['id_usuario'];?>')">deletar</a></td>
+    <td><a href='../paginas../editar_usuario.php?acao=editar&id=<?php echo $linha['id_usuario'];?>'>editar</a></td>
     </tr>
 
 <?php } ?>
