@@ -54,7 +54,7 @@ if($acao == "editar"){
 
     id: <input readonly type="text" name="id_usuario"  value="<?php if($acao == "editar") echo $user->getid_usuario();  else echo 0;?>"> <br><br>
     Insira seu nome completo:      <input type="text" name="nome_usuario" value="<?php if($acao == "editar") echo $user->getnome_usuario();  else echo "";?>"> <br><br>
-    Insira seu nome de login:      <input type="text" name="login_usuario" value="<?php if($acao == "editar") echo $user->getlogin_usuario();  else echo "";?>"> <br><br>
+    Usuário:      <input type="text" name="login_usuario" value="<?php if($acao == "editar") echo $user->getlogin_usuario();  else echo "";?>"> <br><br>
     Insira seu email:              <input type="text" name="email_usuario" value="<?php if($acao == "editar") echo $user->getemail_usuario();  else echo "";?>"> <br><br>
     Insira sua senha:              <input type="text" name="senha" value="<?php if($acao == "editar") echo $user->getsenha();  else echo "";?>"> <br><br>
     Insira sobre você:              <input type="text" name="sobre" value="<?php if($acao == "editar") echo $user->getsobre();  else echo "";?>"> <br><br>
