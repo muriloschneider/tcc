@@ -13,6 +13,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cadastro</title>
+    <link rel="stylesheet" href="css../teste.css"/>
+
 
     <?php
 
@@ -62,31 +64,31 @@ $id_usuario = 0;
 
 </tr>
 
-    <?php
+    <!-- <?php
 
  //$pdo = Conexao::getInstance();
 //  $consulta = $user->listar($tipo, $procurar);
     
 // while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
 
-    $consulta = usuario::listar($tipo, $procurar);
-foreach($consulta as $linha){
-    ?>
+//     $consulta = usuario::listar($tipo, $procurar);
+// foreach($consulta as $linha){
+    ?> -->
 
-    <tr><td><?php echo $linha['id_usuario'];?></td>
-    <td><?php echo $linha['nome_usuario'];?></td> 
-    <td><?php echo $linha['login_usuario'];?></td> 
-    <td><?php echo $linha['email_usuario'];?></td> 
-    <td><?php echo $linha['senha'];?></td> 
-    <td><?php echo $linha['sobre'];?></td> 
-    <td><?php echo $linha['regiao'];?></td> 
-    <td><?php echo $linha['site'];?></td> 
-
+    <!-- <tr><td><?php// echo $linha['id_usuario'];?></td>
+    <td><?php //echo $linha['nome_usuario'];?></td> 
+    <td><?php// echo $linha['login_usuario'];?></td> 
+    <td><?php// echo $linha['email_usuario'];?></td> 
+    <td><?php //echo $linha['senha'];?></td> 
+    <td><?php //echo $linha['sobre'];?></td> 
+    <td><?php// echo $linha['regiao'];?></td> 
+    <td><?php //echo $linha['site'];?></td>  -->
+<!-- 
     <td><a href="javascript:excluirRegistro('../acao/acao_editar_usuario.php?acao=excluir&id_usuario=<?php echo $linha['id_usuario'];?>')">deletar</a></td>
-    <td><a href='../paginas../editar_usuario.php?acao=editar&id=<?php echo $linha['id_usuario'];?>'>editar</a></td>
+    <td><a href='../paginas../editar_usuario.php?acao=editar&id=<?php //echo $linha['id_usuario'];?>'>editar</a></td> -->
     </tr>
 
-<?php } ?>
+<?php //} ?>
 </table>
 </body>
 </html>
