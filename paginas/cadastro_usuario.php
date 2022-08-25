@@ -1,15 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
-<script>
-        function excluirRegistro(url){
-            if (confirm("Confirma Exclusão?"))
-                location.href = url;
-        }
-    </script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -32,80 +25,43 @@
     $acao = isset($_GET['acao']) ? $_GET['acao'] : "";
     $id_usuario = isset($_GET['id_usuario']) ? $_GET['id_usuario'] : "";
 
-    //$user = new usuario($id_usuario, $nome_usuario, $login_usuario, $email_usuario, $senha, $sobre, $regiao, $site);
-
-//$id_usuario = 0;
-
     ?>
 
+    </head>
+    <body>
 
-</head>
-<body>
-
-
-
-
+<div class="baixo">
+    
 <div class="um">
+
 <div class="dois">
+
 <div class="tres">
 
 <div class="quatro">
 
 <h1 style="color: #ffffff"> CADASTRO </h1>
+
+
 <form method="get" action="../acao/acao_cadastro_usuario.php" >
 
-   <div class="nome">      <input type="text" placeholder="nome" name="Nome_usuario" value="<?php if($acao == "editar") echo $user->getnome_usuario();  else echo "";?>"> </div><br><br>
-   <div class="usuario">   <input type="text" placeholder="Usuário" name="login_usuario" value="<?php if($acao == "editar") echo $user->getlogin_usuario();  else echo "";?>"> </div> <br><br>
-                     <input type="text" placeholder="E-mail" name="email_usuario" value="<?php if($acao == "editar") echo $user->getemail_usuario();  else echo "";?>"> <br><br>
-                     <input type="text" placeholder="Senha" name="senha" value="<?php if($acao == "editar") echo $user->getsenha();  else echo "";?>"> <br><br>
+                    <input type="text" placeholder="nome" name="Nome_usuario" value="<?php if($acao == "editar") echo $user->getnome_usuario();  else echo "";?>"> <br><br>
+                    <input type="text" placeholder="Usuário" name="login_usuario" value="<?php if($acao == "editar") echo $user->getlogin_usuario();  else echo "";?>"> <br><br>
+                    <input type="text" placeholder="E-mail" name="email_usuario" value="<?php if($acao == "editar") echo $user->getemail_usuario();  else echo "";?>"> <br><br>
+                    <input type="text" placeholder="Senha" name="senha" value="<?php if($acao == "editar") echo $user->getsenha();  else echo "";?>"> <br><br>
 
     <button type="submit" name="acao" value="salvar" class="btn btn-danger">Cadastrar</button>
 </form>
 
     </div>
     </div>
-</div>
-</div>
+    </div>
+    </div>
 <div class="imagem">
     </div>
-    <!-- <table border="1"> 
-
-<tr>
-    <th>id</th>
-    <th>nome</th>
-    <th>login</th>
-    <th>email</th>
-    <th>senha</th>
+    </div>
     
-
-
-</tr> -->
-
-    <!-- <?php
-
- //$pdo = Conexao::getInstance();
-//  $consulta = $user->listar($tipo, $procurar);
-    
-// while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
-
-//     $consulta = usuario::listar($tipo, $procurar);
-// foreach($consulta as $linha){
-    ?> -->
-
-    <!-- <tr><td><?php// echo $linha['id_usuario'];?></td>
-    <td><?php //echo $linha['nome_usuario'];?></td> 
-    <td><?php// echo $linha['login_usuario'];?></td> 
-    <td><?php// echo $linha['email_usuario'];?></td> 
-    <td><?php //echo $linha['senha'];?></td> 
-    <td><?php //echo $linha['sobre'];?></td> 
-    <td><?php// echo $linha['regiao'];?></td> 
-    <td><?php //echo $linha['site'];?></td>  -->
-<!-- 
-    <td><a href="javascript:excluirRegistro('../acao/acao_editar_usuario.php?acao=excluir&id_usuario=<?php //echo $linha['id_usuario'];?>')">deletar</a></td>
-    <td><a href='../paginas../editar_usuario.php?acao=editar&id=<?php //echo $linha['id_usuario'];?>'>editar</a></td> -->
-    </tr>
-
-<?php //} ?>
 </table>
 </body>
+
 </html>
