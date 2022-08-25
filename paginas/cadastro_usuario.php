@@ -44,7 +44,7 @@
 
 
 <form method="get" action="../acao/acao_cadastro_usuario.php" >
-
+<div class="elementos">
                     <input type="text" placeholder="nome" name="Nome_usuario" value="<?php if($acao == "editar") echo $user->getnome_usuario();  else echo "";?>"> <br><br>
                     <input type="text" placeholder="Usuário" name="login_usuario" value="<?php if($acao == "editar") echo $user->getlogin_usuario();  else echo "";?>"> <br><br>
                     <input type="text" placeholder="E-mail" name="email_usuario" value="<?php if($acao == "editar") echo $user->getemail_usuario();  else echo "";?>"> <br><br>
@@ -52,7 +52,7 @@
 
     <button type="submit" name="acao" value="salvar" class="btn btn-danger">Cadastrar</button>
 </form>
-
+</div>
     </div>
     </div>
     </div>
