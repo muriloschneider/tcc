@@ -26,7 +26,7 @@
 
 <link rel="stylesheet" href="../css/csstcc.css"/>
 
-    </head>
+</head>
     <body>
 
     <div class="stars">
