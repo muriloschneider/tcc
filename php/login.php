@@ -2,7 +2,7 @@
     session_start();
     include_once "../conf/default.inc.php";
     require_once "../conf/Conexao.php";
-    include_once('../classes/usuario.class.php');
+    include_once('../classes/autoload.php');
     $login = isset($_POST["login"]) ? $_POST["login"] : "";     
     $senha = isset($_POST["senha"]) ? $_POST["senha"] : ""; 
     

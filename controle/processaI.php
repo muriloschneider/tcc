@@ -20,10 +20,14 @@
             $user = new Usuario("", $_POST['nome'],  $_POST['login'], $_POST['email'], $_POST['senha'], "", "", "");                 
             $resultado = $user->inserir();
             header("location:../php/confirmacaologin.php");
+        }else{
+            $user = new Usuario($id, $_POST['nome'], $_POST['login'], $_POST['email'], $_POST['senha'], $_POST['sobre'],$_POST['regiao'],$_POST['website']);              
+            $resultado = $user->editar();
+            header("location:../php/meuperfil.php");
+
+            }
     
         } 
-}
-
 
 //Consulta os dados dentro do banco.
     function buscarDados($id){
@@ -44,12 +48,14 @@
     return $dados;
 }
 
+
+
     include_once "../classes/autoload.php";
     if ($processo == "login"){
         if(isset($_POST['login']) && isset($_POST['senha']) && Usuario::efetuarLogin($_POST['login'], $_POST['senha'])) {
-            header("Location:../php/principal.php");
+            header("Location:../php/meuperfil.php");
         } else if(isset($_POST['login']) && isset($_POST['senha'])) {
-            header("Location: login.php?msg=Login Não-Efetuado!");
+            header("Location:../php/login.php?msg=Login Não-Efetuado!");
         }
     }
 

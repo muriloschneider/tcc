@@ -23,6 +23,7 @@ require_once "../classes/database.class.php";
         public abstract function inserir();
         public abstract function excluir();
         public abstract function editar();
+        public abstract static function dados($id);
         public abstract static function listar($buscar = 0, $procurar = "");
     }
 ?>

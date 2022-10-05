@@ -99,30 +99,33 @@
             return parent::executaComando($sql,$parametros);
         }
 
-        // public static function listar($buscar = 0, $procurar = ""){
-        //     //cria conexão e seleciona as informações do usário.
-        //     $pdo = Conexao::getInstance();
-        //     $consulta = "SELECT * FROM usuario";
-        //     if($buscar > 0)
-        //         switch($buscar){
-        //             //se login da consulta for por id, mostra as informações de acepdo com aquele id.
-        //             case(1): $consulta .= " WHERE id = :procurar"; break;
-        //             //se login da consulta for por nome, mostra as informações de acepdo com aquele nome.
-        //             case(2): $consulta .= " WHERE nome LIKE :procurar"; "%".$procurar .="%"; break;
-        //             case(3): $consulta .= " WHERE login LIKE :procurar"; "%".$procurar .="%"; break;
-        //             //se login da consulta for por senha, mostra as informações de acepdo com aquele senha.
-        //             case(4): $consulta .= " WHERE senha LIKE :procurar "; $procurar = "%".$procurar."%"; break;
-        //             //se login da consulta for por email, mostra as informações de acepdo com aquele email.
-        //             case(5): $consulta .= " WHERE sobre = :procurar "; break;
-        //         }
+        public static function listar($buscar = 0, $procurar = ""){
+            //cria conexão e seleciona as informações do usário.
+            $pdo = Conexao::getInstance();
+            $consulta = "SELECT * FROM usuario";
+            if($buscar > 0)
+                switch($buscar){
+                    case(1): $consulta .= " WHERE id = :procurar"; break;
+                    case(2): $consulta .= " WHERE nome LIKE :procurar"; "%".$procurar .="%"; break;
+                    case(3): $consulta .= " WHERE login LIKE :procurar"; "%".$procurar .="%"; break;
+                    case(4): $consulta .= " WHERE senha LIKE :procurar "; $procurar = "%".$procurar."%"; break;
+                    case(5): $consulta .= " WHERE sobre = :procurar "; break;
+                }
 
-        //     if ($buscar > 0)
-        //         $parametros = array(':procurar'=>$procurar);
-        //     else 
-        //         $parametros = array();
-        //     return parent::buscar($consulta, $parametros);
-        // }
+            if ($buscar > 0)
+                $parametros = array(':procurar'=>$procurar);
+            else 
+                $parametros = array();
+            return parent::buscar($consulta, $parametros);
+        }
         
+        public static function dados($id){
+            $sql = "SELECT * FROM usuario WHERE id = :id";
+            $parametros = array(":id"=>$id);
+            return parent::buscar($sql, $parametros);
+        }
+
+
         public static function efetuarLogin($login, $senha){
             $sql = "SELECT id, nome, login, email, senha FROM usuario WHERE login = :login AND senha = :senha";
             $parametros = array(
@@ -147,47 +150,7 @@
                 return false;
             }
         }
-
-        public static function listar($tipo = 0, $procurar = ""){
-        
-            if($tipo==""){
-                $sql = ("SELECT * FROM usuario");
-            }
-            
-             else if($tipo =="1"){
-                $sql = ("SELECT * FROM usuario 
-                                         WHERE nome = '$procurar%'
-                                         ORDER BY nome");
-            }
-            
-             else if($tipo =="2"){
-                $sql = ("SELECT * FROM usuario 
-                                         WHERE sobre LIKE '$procurar%' 
-                                         ORDER BY sobre");
-            }
-            
-            else if($tipo =="3"){
-                $sql = ("SELECT * FROM usuario 
-                                         WHERE regiao LIKE '$procurar%' 
-                                         ORDER BY regiao");
-            }
-            else if($tipo =="4"){
-                $sql = ("SELECT * FROM usuario 
-                                         WHERE website LIKE '$procurar%' 
-                                         ORDER BY website");
-            }
-            
-    if ($tipo > 0)
-    $par = array(':procurar'=>$procurar);
-    else
-    $par = array();
-    return parent::buscar($sql, $par);
     
-    //var_dump($tipo);
-    return $tipo;
-    
-    }     
-   
     }
 
 
