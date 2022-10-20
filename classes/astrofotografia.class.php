@@ -11,9 +11,7 @@
         private $detalhes;
         private $ficheiro;
         private $usuario;
-       
-
-
+        
         //constrói as variáveis.
         public function __construct($id, $nome, $equipamento, $detalhes, $ficheiro, $usuario){
             parent::__construct($id);
@@ -56,8 +54,8 @@
         }
 
         public function excluir(){
-            $sql = 'DELETE FROM odisseia.astrofotografia WHERE idastro = :idastro';
-            $parametros = array(":idastro"=>$this->getId());
+            $sql = 'DELETE FROM odisseia.astrofotografia WHERE id = :id';
+            $parametros = array(":id"=>$this->getId());
             return parent::executaComando($sql,$parametros);
         }
 
@@ -79,7 +77,7 @@
             $consulta = "SELECT * FROM usuario";
             if($buscar > 0)
                 switch($buscar){
-                    case(1): $consulta .= " WHERE idastro = :procurar"; break;
+                    case(1): $consulta .= " WHERE id = :procurar"; break;
                     case(2): $consulta .= " WHERE nome_astro LIKE :procurar"; "%".$procurar .="%"; break;
                 }
 
@@ -91,8 +89,8 @@
         }
         
         public static function dados($id){
-            $sql = "SELECT * FROM astrofotografia WHERE idastro = :idastro";
-            $parametros = array(":idastro"=>$id);
+            $sql = "SELECT * FROM astrofotografia WHERE id = :id";
+            $parametros = array(":id"=>$id);
             return parent::buscar($sql, $parametros);
         }
 
