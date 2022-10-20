@@ -21,7 +21,7 @@
             $this->setEquip($equipamento);
             $this->setdetalhes($detalhes);
             $this->setFicheiro($ficheiro);
-            $this->setFicheiro($usuario);
+            $this->setUsuario($usuario);
         }
 
         //busca e seta os valores das variáveis.
@@ -43,13 +43,13 @@
  
 
         public function inserir(){
-            $sql = 'INSERT INTO odisseia.astrofotografia (nome_astro, equipamento, detalhes, ficheiro, usuario) 
-            VALUES(:nome_astro, :equipamento, :detalhes, :ficheiro, :usuario)';
+            $sql = 'INSERT INTO odisseia.astrofotografia (nome_astro, equipamento, detalhes, ficheiro, idusuario) 
+            VALUES(:nome_astro, :equipamento, :detalhes, :ficheiro, :idusuario)';
             $parametros = array(":nome_astro"=>$this->getnome(), 
                                 ":equipamento"=>$this->getequip(),
                                 ":detalhes"=>$this->getdetalhes(),
-                                ":ficheiro"=>$this->getusuario(), 
-                                ":usuario"=>$this->getusuario(),
+                                ":ficheiro"=>$this->getficheiro(), 
+                                ":idusuario"=>$this->getusuario(),
                             
                             );
             return parent::executaComando($sql,$parametros);
@@ -62,25 +62,27 @@
         }
 
         public function editar(){
-            $sql = 'UPDATE odisseia.astrofotografia SET nome_astro = :nome_astro, equipamento = :equipamento, detalhes = :detalhes, ficheiro = :ficheiro, usuario = :usuario
-            WHERE id = :id';
+            $sql = 'UPDATE odisseia.astrofotografia SET nome_astro = :nome_astro, equipamento = :equipamento, detalhes = :detalhes, ficheiro = :ficheiro, idusuario = :idusuario
+            WHERE idastro = :idastro';
             $parametros = array(":nome_astro"=>$this->getnome(),
                                 ":equipamento"=>$this->getequip(),
                                 ":detalhes"=>$this->getdetalhes(),
                                 ":ficheiro"=>$this->getficheiro(),
-                                ":usuario"=>$this->getusuario(),
-                                ":id"=>$this->getId());
+                                ":idusuario"=>$this->getusuario(),
+                                ":idastro"=>$this->getId());
             return parent::executaComando($sql,$parametros);
         }
 
         public static function listar($buscar = 0, $procurar = ""){
             //cria conexão e seleciona as informações do usário.
             $pdo = Conexao::getInstance();
-            $consulta = "SELECT * FROM usuario";
+            $consulta = "SELECT * FROM astrofotografia";
             if($buscar > 0)
                 switch($buscar){
                     case(1): $consulta .= " WHERE idastro = :procurar"; break;
                     case(2): $consulta .= " WHERE nome_astro LIKE :procurar"; "%".$procurar .="%"; break;
+                    case(3): $consulta .= " WHERE idusuario = :procurar"; "%".$procurar .="%"; break; 
+
                 }
 
             if ($buscar > 0)
