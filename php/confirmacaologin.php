@@ -94,8 +94,9 @@
 </footer>
     <div class="preto">
 </div>
-<div class="aviso" style="margin-top: 50%;">
-    <center><p class = "aviso">CADASTRO EFETUADO COM SUCESSO</p></center>
+
+<div class="aviso" style="margin-top: 50%; padding: 10%;">
+    <center><p class = "aviso">CADASTRO EFETUADO<br> COM SUCESSO</p></center>
     <br>
     <a href="login.php"><button class = "avancar"  style = "margin-left: 35%;">CONTINUAR</button></a>
 </div>

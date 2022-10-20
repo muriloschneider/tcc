@@ -28,12 +28,10 @@
 <div class="caixaI">
 <div class="caixaII">
 <div class="caixaIII">
-
-
 <div class="caixaIV">
 
 
-
+<br><br><br><br>
 <center><p class="titulo"> LOGIN </p></center>
 
 
@@ -62,7 +60,7 @@
 </div>
 
 
-<p class="descri">Não tem uma conta ainda?<br> Cadastre-se <a href="cadastro.php">aqui</a></p>
+<p class="descri">Não tem uma conta ainda?<br> Cadastre-se <a href="../php/cadastro.php">aqui</a></p>
 
 
 

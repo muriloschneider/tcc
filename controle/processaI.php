@@ -13,7 +13,16 @@
   
   
     if(isset($_POST['processo'])){$processo = $_POST['processo'];}else if(isset($_GET['processo'])){$processo = $_GET['processo'];}else{$processo="";}
-
+   
+      
+    if ($processo == "excluir"){
+        $id = isset($_POST['id']) ? $_POST['id'] : 0;
+        $user = Usuario::Listar($buscar = 1, $procurar = $id);
+        $user = new Usuario($id, $_POST['nome'], $_POST['login'], $_POST['email'], $_POST['senha'], $_POST['sobre'],$_POST['regiao'],$_POST['website']);                 
+        $resultado = $user->excluir();
+        header("location:../php/login.php");
+    }
+   
     if ($processo == "salvar"){
          //verifica se o ID é igual a 0, se for cria/insere novo usuário, se não edita as informações no banco.
         if ($id == 0){
