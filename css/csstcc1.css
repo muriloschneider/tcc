@@ -1,0 +1,380 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+
+@keyframes move-clouds-back {
+    from {background-position:0 0;}
+    to {background-position:10000px 0;}
+}
+
+.stars, .twinkling, .clouds {
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  width:100%;
+  height:100%;
+  display:block;
+}
+
+.stars {
+  background:#000 url(../imagens/stars.png) repeat top center;
+  z-index:0;
+}
+
+.twinkling{
+  background:transparent url(../imagens/twinkling.png) repeat top center;
+  z-index:1;
+  animation:move-twink-back 200s linear infinite;
+}
+
+div.clouds{
+    background:transparent url(../imagens/clouds.png) repeat top center;
+    z-index:0;
+    opacity: .4;
+    animation:move-clouds-back 200s linear infinite;
+}
+
+
+
+body{
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+div.caixaI{
+    
+position: absolute;
+width: 50%;
+height: 100%;
+left: 0px;
+top: 0px;
+
+background: #74030e;
+    border-color: transparent;
+    
+    opacity: 1;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+
+div.caixaII{
+
+    position: absolute;
+    width: 41.5%;
+    height: 100%;
+    left: 40px;
+    top: 0px;
+    
+background: #92242F;
+border-color: transparent;   
+opacity: 1;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);    
+}
+
+div.caixaIII{
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    left: 40px;
+    top: 0px;
+border-color: transparent;   
+opacity: 1;
+background: #BC5357;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+div.caixaIV{
+    position: absolute;
+    width: 102%;
+    height: 100%;
+    left: 6.5%;
+    top: 0px;
+border-color: transparent;   
+opacity: 1;
+background: #9D452F;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+
+p.titulo{
+    margin-top: 6%;
+    font-family: 'Hammersmith One', sans-serif;
+    color: white;
+    font-size: 280%;
+    letter-spacing: 2px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+input[type=text]{
+    box-sizing: border-box;
+    background-color: white;
+    width: 80%;
+    height: 25px;
+    border-radius: 50px;
+    border-color: transparent;
+    padding-left: 7%;
+    font-family: 'Hammersmith One', sans-serif;
+    font-size: 100%;
+    margin-bottom: 0%;
+    margin-left: 3%;
+  
+    
+    
+    
+}
+
+input[type=password]{
+    box-sizing: border-box;
+    background-color: white;
+    width: 80%;
+    height: 25px;
+    border-radius: 50px;
+    border-color: transparent;
+    padding-left: 5%;
+    font-family: 'Hammersmith One', sans-serif;
+    font-size: 100%;
+    margin-left: 3%;
+    
+}
+
+
+input[type=checkbox]{
+    box-sizing: border-box;
+    background-color: white;
+    padding-left: 100px;
+    width: 13%;
+    height: 15px;
+    border-radius: 90px;
+    border-color: transparent;      
+    font-family: 'Hammersmith One', sans-serif;
+   float: left;
+}
+  
+
+
+img.icon{
+    width: 13%;
+    float: left;
+}
+
+div.icon{
+    padding: 2%;
+}
+
+
+div.color{
+    margin-top: 1%;
+    box-sizing: border-box;
+    margin-left: 22%;
+    margin-right: 22%;
+    padding: 5%;
+    background: #8C3001;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+  
+}
+
+div.check{
+    margin-top: 10%;
+    margin-left: 1%;
+    margin-right: 7%;
+}
+
+
+
+p.check{
+    margin-left: 38px;
+    font-family: 'Poppins';
+    font-weight: 100;
+    color: #FFFFFF;
+    font-size: 13px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    text-align:  justify;
+}
+
+button{
+    background-color: #700100;
+    border-color: transparent;
+    color: white;
+    width: 40%;
+    height: 39px;
+    border-radius: 50px;
+    font-family: 'Hammersmith One', sans-serif;
+    font-size: 16px;
+    margin-top: 8%;
+    margin-bottom: 1%;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    letter-spacing: 1px;
+}
+
+
+
+
+div.footer{
+    position: absolute;
+    margin-top: 233%;
+    margin-left: -16%;
+    width: 249.5%;
+    height: 10%;
+    background-color: black;
+}
+
+div.footer1{
+    position: absolute;
+    margin-top: 233%;
+    margin-left: 232.7%;
+    width: 235.5%;
+    height: 10%;
+    background-color: #342832;
+}
+
+div.footer3{
+    background-color: #775055;
+    width: 93.5%;
+    height: 100%;
+    margin-left: 6.5%;
+}
+
+div.footer4{
+   background-color: #A98C90;
+   width: 93.5%;
+   height: 100%;
+   margin-left: 6.5%;
+}
+
+div.footer5{
+   background-color: #C4A7A1;
+   width: 93.5%;
+   height: 100%;
+   margin-left: 6.5%;
+   padding-top: 0.7%;
+}
+
+p.descri{
+       font-family: 'Hammersmith One', sans-serif;
+       color: white;
+       letter-spacing: 0.7px;
+       font-size: 100%;
+       margin-left: 22.5%;
+       margin-top: 2.0%;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+a:hover{
+    color: darkred;
+}
+
+p.odi{
+    font-family: 'Hammersmith One', sans-serif;
+    font-size: 250%; 
+    letter-spacing: 25px;
+    margin-left: 22%;
+    margin-top: 1.5%;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+div.redesocial{
+    float: left;
+    padding-top: 1.3%;
+    padding-left: 2.5%;
+    width: 30%;
+}
+
+img.rede{
+    width: 23%;
+    float: left;
+    margin-right: 1%;
+}
+
+p.redesocial{
+    font-family: 'Hammersmith One', sans-serif;
+    color: white;
+    font-size: 105%;
+    margin-top: 8%;
+}
+
+img.logo{
+    float: left;
+    width: 10%;
+    margin-top: 0.5%;
+    margin-left: 8%;
+    margin-right: 3%;
+}
+
+div.preto{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.829);
+    width: 481.5%;
+    height: 100%;
+    opacity: 0.8;
+    margin-left: -15%;
+    filter: blur(100%);
+    -webkit-filter: blur(100px);
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  -webkit-filter: blur(15px);
+  -moz-filter: blur(15px);
+  -o-filter: blur(15px);
+  -ms-filter: blur(15px);
+  filter: blur(15px);
+}
+
+div.aviso{
+    position: absolute;
+    background-color: rgb(128, 2, 2);
+    width:240%;
+    height:47%;
+    margin-left: 100%;
+    margin-right: 100%;
+    margin-top: 50%;
+    border-radius: 20px;
+}
+
+p.aviso{
+
+    margin-top: 8%;
+    font-family: 'Hammersmith One', sans-serif;
+    color: white;
+    font-size: 250%;
+
+
+
+}
+
+
+button.avancar{
+    background-color: #194704;
+    border-color: transparent;
+    color: white;
+    border-radius: 5px;
+    width: 30%;
+    height:50px;
+    margin-left: 100%;
+    font-family: 'Hammersmith One', sans-serif;
+    font-size: 20px;
+    margin-top: 8%;
+    margin-bottom: 1%;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    letter-spacing: 1px;
+}
+
