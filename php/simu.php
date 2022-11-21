@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" href="../../img/favicon.ico">
+    <link rel=" shortcut icon" href="../imagens/favicon.png " type="image/x-icon">   
     <link rel="stylesheet" href="../css/cad.css"/>
     <title>  Órbitas Newtonianas | ODISSEIA </title>
 
@@ -28,6 +28,11 @@
             right: 0; 
             bottom: 0; 
         }
+
+         
+        a:hover{
+        color: #74030e;
+        }      
         label{
             color: #fff;
         }
@@ -70,12 +75,9 @@
 <header style = "background-color: #BC5357;;"> 
     <br>
     <p class="odi" style = "font-size: 200%; margin-top: -2%; height: 8px;"><a href="principal.php">O D I S S E I A</a></p>
-        <div class="menu" style = "padding-top: -1%; padding-left: 50%">
+        <div class="menu" style = "padding-top: -1%; padding-left: 71%">
             <ul>
-                    <li><a href="meuperfil.php">MEU PERFIL |</a></li>
-                    <li><a href="principal.php">ASTROFOTOS |</a></li>
-                    <li><a href="principalart.php">ARTIGOS |</a></li>
-                    <li><a href="simu.php">SIMULAÇÃO |</a></li>
+                    <li><a href="simu.php">REINICIAR SIMULAÇÃO |</a></li>
                     <li><a href="../controle/processaI.php?processo=login">ENCERRAR SESSÃO</a></li>
                 </ul> 
         </div>
@@ -83,25 +85,22 @@
     </header>
     <br>
     <div>
-        <label for="circulo1"  style = "margin-left: 1%; font-family: 'Hammersmith One'; color: white; ">PLANETA 1 </label><br>
-        <label for="massa"  style = "margin-left: 1%; font-family: 'Hammersmith One'; color: white; border-radius: 5px">Massa 1: 
-       <input type="text" id="massa"style = "border-radius: 2px; border: none; margin-left: 0.4%; font-family: 'Hammersmith One'; color: black;"> <b style = "color: red">Valor:</b> <span id = "numero"></span> 
-        </label><br>
-        <label for="raio"  style = "margin-left: 1%; font-family: 'Hammersmith One'; color: white;" >Raio 1: 
-        <input type="text" id="raio" style = "border-radius: 2px; border: none; margin-left: 1.55%; font-family: 'Hammersmith One'; color: black; "> <b style = "color: red">Valor:</b> <span id = "numero1"></span> 
-        </label>
+        <label for="circulo1"  style = "margin-left: 1%; font-family: 'Hammersmith One'; color: red; ">PLANETA 1 </label><br>
+        <label for="massa"  style = "margin-left: 1%; font-family: 'Hammersmith One'; color: white; border-radius: 5px">MASSA 1: 
+       <input type="text" id="massa"style = "border-radius: 2px; border: none; margin-left: 0.4%; font-family: 'Hammersmith One'; color: black;"></label><br>
+        <label for="raio"  style = "margin-left: 1%; font-family: 'Hammersmith One'; color: white;" >RAIO 1: 
+        <input type="text" id="raio" style = "border-radius: 2px; border: none; margin-left: 1.55%; font-family: 'Hammersmith One'; color: black; "></label>
             <br><br><br>
-        <label for="circulo1"  style = "margin-left: 1%; font-family: 'Hammersmith One'; color: white; ">PLANETA 2 </label><br>
-        <label for="massa"  style = "margin-left: 1%; font-family: 'Hammersmith One'; color: white;">Massa 2: 
-       <input type="text" id="massa2" style = "border-radius: 2px; border: none; margin-left: 0.4%; font-family: 'Hammersmith One'; color: black;"> <b style = "color: red"> Valor:</b> <span id = "numero2"></span> 
-        </label><br>
-        <label for="raio"  style = "margin-left: 1%; font-family: 'Hammersmith One'; color: white;" >Raio 2: 
-        <input type="text  " id="raio2" style = "border-radius: 2px; border: none; margin-left: 1.55%; font-family: 'Hammersmith One'; color: black;"> <b style = "color: red"> Valor: </b> <span id = "numero3"></span> 
-        </div>
+        <label for="circulo1"  style = "margin-left: 1%; font-family: 'Hammersmith One'; color: red; ">PLANETA 2 </label><br>
+        <label for="massa"  style = "margin-left: 1%; font-family: 'Hammersmith One'; color: white;">MASSA 2: 
+       <input type="text" id="massa2" style = "border-radius: 2px; border: none; margin-left: 0.4%; font-family: 'Hammersmith One'; color: black;"></label><br>
+        <label for="raio"  style = "margin-left: 1%; font-family: 'Hammersmith One'; color: white;" >RAIO 2: 
+        <input type="text  " id="raio2" style = "border-radius: 2px; border: none; margin-left: 1.55%; font-family: 'Hammersmith One'; color: black;"></div>
 
             <br>
         <input class = "bt" type="submit" name="acao" id="acao" style = "margin-left: 1%; font-family: 'Hammersmith One'; color: white; background-color: #74030e; border: none" value="INICIAR SIMULAÇÃO">
     </div>
+    <br>
     <div id="viewport">
         <canvas class=" pjs-layer-main" width="0" height="736" style="position: absolute; z-index: 1;"></canvas>
     </div>

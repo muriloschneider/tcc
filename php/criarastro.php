@@ -21,9 +21,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" href="../../img/favicon.ico">
+    <link rel=" shortcut icon" href="../imagens/favicon.png " type="image/x-icon">   
     <link rel="stylesheet" href="../css/cad.css"/>
-    <title> <?php echo $titulo ?> | ODISSEIA </title>
+    <title> Nova Publicação | ODISSEIA </title>
 </head>
 <style>
     input{
@@ -45,7 +45,6 @@
         <div class="menu" style = "padding-top: -1%; padding-left: 59%">
             <ul>
                     <li><a href="principal.php">ASTROFOTOS </a></li>
-                    <li><a href="criarastro.php">NOVA PUBLICAÇÃO </a></li>
                     <li><a href="meuperfil.php">MEU PERFIL </a></li>
                     <li><a href="../controle/processaI.php?processo=login">ENCERRAR SESSÃO</a></li>
                 </ul> 
@@ -61,12 +60,12 @@
         <center>
             <div><img src="../imagens/card-image.svg" alt="" style="object-fit: cover; width: 365px; height: 364.40px; border-radius: 5px; margin-top:-1%"></div>
             <br>
-            <a class="bt" href='principal.php' style="margin-left: -5%; margin-right: 47%; font-family: 'Hammersmith One', sans-serif; maxx; color: white; background-color: #74030e;">  
+            <a class="bt" href='principal.php' style="margin-left: -5%; margin-right: 47%; font-family: 'Hammersmith One', sans-serif; color: white; background-color: #74030e;">  
             VOLTAR </a>
             <img src="../imagens/arrow-return-left.svg" alt="" style="resize: none; margin-bottom: -0.5em; margin-left: -23em; margin-right: 20em">
             
             <div style = "margin-left: 40%; margin-top: -1.6em">
-            <button class="bt2" name="processo" value="salvar" id="processo" type = "submit" style="padding-right: -10%; margin-left: -1em; width: fit-content; height: fit-content; margin-top: -10em; font-family: 'Hammersmith One', sans-serif; maxx; color: white; background-color: #74030e;">  
+            <button class="bt2" name="processo" value="salvar" id="processo" type = "submit" style="padding-right: -10%; margin-left: -1em; width: fit-content; height: fit-content; margin-top: -10em; font-family: 'Hammersmith One', sans-serif; color: white; background-color: #74030e;">  
             SALVAR</buttton>
             <img src="../imagens/check-lg.svg" alt="" style="resize: none; margin-top: -15em; margin-bottom: -5%; margin-left: -0.1em; margin-right: -1em;">
             </div>
@@ -78,14 +77,14 @@
                                                                         
             <div>
                 <p style="text-transform: uppercase; font-size: 150%;" class="titulo2">Equipamento</p><br><br>
-                <textarea name="equipamento" required = "true" style="font-size: 100%; padding-top: 1%; padding-left: 1%; border-radius: 5px; color: white; height: 100%; width: 100%;  border: none; background-color: #BC5357; font-family: 'Hammersmith One', sans-serif; maxx; resize: none;"></textarea>
+                <textarea name="equipamento" required = "true" style="font-size: 100%; padding-top: 1%; padding-left: 1%; border-radius: 5px; color: white; height: 100%; width: 100%;  border: none; background-color: #BC5357; font-family: 'Hammersmith One', sans-serif; resize: none;"></textarea>
             </div>         
         </div>
         
         <div class="color3" style="overflow-y: scroll; background: #8C3001; margin-top: 0.5%; border-radius: 5px;">
             <div>
             <p style="text-transform: uppercase; font-size: 150%" class="titulo2">Detalhes de Captura</p><br><br>
-                <textarea name="detalhes" required = "true" style="font-size: 100%; padding-top: 1%; padding-left: 1%; border-radius: 5px; color: white; height: 100%; width: 100%; border: none; background-color: #BC5357; font-family: 'Hammersmith One', sans-serif; maxx; resize: none;"></textarea>
+                <textarea name="detalhes" required = "true" style="font-size: 100%; padding-top: 1%; padding-left: 1%; border-radius: 5px; color: white; height: 100%; width: 100%; border: none; background-color: #BC5357; font-family: 'Hammersmith One', sans-serif; resize: none;"></textarea>
             </div>
         </div>
         <div class="color3" style="overflow-y: scroll; background: #8C3001; margin-top: 0.5%; border-radius: 5px;">

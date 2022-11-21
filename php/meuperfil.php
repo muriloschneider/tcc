@@ -31,7 +31,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" href="../../img/favicon.ico">
+    <link rel=" shortcut icon" href="../imagens/favicon.png " type="image/x-icon">   
     <link rel="stylesheet" href="../css/cad.css">
     <title>Meu Perfil | ODISSEIA </title>
 </head>
@@ -103,7 +103,7 @@
     .ver{
         margin-top: 32%;
         background-color: #74030e; 
-        margin-left: -42%; 
+        margin-left: -42.4%; 
         padding-left: 31em; 
         padding-right: 2em; 
         padding-bottom: 1em;
@@ -187,10 +187,10 @@
             <br>
             <br>
             </div> 
-                <div class="ver" style = "background-color: #a33e0b; margin-right: 1%">
+                <div class="ver" style = "background-color: #a33e0b; margin-right: 1%;">
                 <center>
                     <a style="margin-top: 2.3em; margin-left: -31.5em; background: none; color: white; " class="bt" href='editarperfil.php?id=<?php echo $data['id'];?>&processo=editar'>
-                    <img src="../imagens/edit.png" alt="" style="width: 2em; margin-left: 80%"></a>
+                    <img src="../imagens/edit.png" alt="" style="width: 2em; margin-left: 79%"></a>
                     <p style="margin-left: -28.4em; font-family: 'Hammersmith One', sans-serif;">EDITAR PERFIL</p>
                 </center>
                 </div>

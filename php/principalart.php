@@ -19,6 +19,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../css/cad.css">
+    <link rel=" shortcut icon" href="../imagens/favicon.png " type="image/x-icon">   
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
     <title>Artigos | ODISSEIA</title>
 </head>
@@ -50,6 +51,12 @@
         color: white;
     }
 
+    .ver:hover{
+        color: #BC5357;
+    }
+
+
+    
     a:hover{
         color: #74030e;
     }
@@ -120,23 +127,19 @@
 
 
 <body style = "overflow-y: scroll";>
-   <header style = "background-color: #BC5357;"> 
-        <center>
-        <div class="menu" style = "padding-top: -1%; padding-left: -50%; margin-left: 5%">
+   
+<header style = "background-color: #BC5357;"> 
+    <br>
+    <p class="odi" style = "font-size: 200%; margin-top: -2%; height: 8px;"><a href="inicio.php">O D I S S E I A</a></p>
+        <div class="menu" style = "padding-top: -1%; padding-left: 69.5%">
             <ul>
-            <li>
-                <form method="post" action="../controle/processaIII.php">
-                <input type="text" name="procurar" id="procurar" size="50" placeholder="" value="<?php echo $procurar;?>">
-            </li>
-            <li><button name="processo" id="processo" type="submit" style = "margin-left: -559%;"><img src="../imagens/busca.svg" style="margin-top: 5%;"></button></li>
-                    
-                    <li style = "margin-left: 18%"><a href="inicio.php">INÍCIO </a></li>
-                    <li><a href="criarartigo.php">CRIAR ARTIGO </a></li>
+                    <li><a href="criarartigo.php">NOVO ARTIGO </a></li>
                     <li><a href="meuperfil.php">MEU PERFIL </a></li>
                     <li><a href="../controle/processaI.php?processo=login">ENCERRAR SESSÃO</a></li>
                 </ul> 
         </div>
-            </header>
+        
+    </header>
         
   
             <div class="main"></div>
@@ -150,7 +153,7 @@
             ?>
                  <tr>
                 <td><p style = "font-family: 'Hammersmith One', sans-serif;"><?php echo $linha['nome_art'];?></p></td>
-                <td><a href='artigos.php?idartigos=<?php echo $linha['idartigos'];?>&idusuario=<?php echo $linha['idusuario'];?>'><img src="../imagens/vermais.svg" alt="" style="width: 1.5em;"><i style = "font-family: 'Hammersmith One', sans-serif; margin-top: -7%"> Ler mais </i></td>
+                <td><a class = "ver" href='artigos.php?idartigos=<?php echo $linha['idartigos'];?>&idusuario=<?php echo $linha['idusuario'];?>'><img src="../imagens/book.svg" alt="" style="width: 1.5em; margin-bottom: -2%"><i style = "font-family: 'Hammersmith One', sans-serif; margin-top: -7%"> Ler mais </i></td>
                     </a></td>                   
                 </tr>
             <?php 

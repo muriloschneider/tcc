@@ -94,37 +94,6 @@
 </div>
 </div>
 
-
-<footer>
-    <div class="footer">
-    
-        <div class="redesocial">
-        <img class="rede" src="../imagens/instagram.png"><p class="redesocial">in/astrodisseia</p>
-        </div>
-
-        <div class="redesocial">
-        <img class="rede" src="../imagens/facebook.png"><p class="redesocial">fb/astrodisseia</p>
-        </div>
-
-        <div class="redesocial">
-        <img class="rede" src="../imagens/telegram.png"><p class="redesocial">t.me/astrodisseia</p>
-        </div>
-        
-        
-    </div>
-
-
-     <div class="footer1">
-    <div class="footer3">
-    <div class="footer4">
-    <div class="footer5">
-    <img src="../imagens/logo1.png" class="logo">
-    <p class="odi">ODISSEIA</p>
-    </div>
-    </div>
-    </div>
-    </div>
-</footer>
 <script src="../js/main.js"></script>
 </body>
 

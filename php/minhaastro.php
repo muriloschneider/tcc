@@ -16,7 +16,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" href="../../img/favicon.ico">
+    <link rel=" shortcut icon" href="../imagens/favicon.png " type="image/x-icon">   
     <link rel="stylesheet" href="../css/cad.css"/>
     <title> <?php echo $titulo ?> | ODISSEIA </title>
 </head>
@@ -60,7 +60,7 @@
 
         </div>
 
-        <div class="color2" style="overflow-y: scroll; border-radius: 5px; margin-top: -38.5%; background: #8C3001;">
+        <div class="color2" style="overflow-y: scroll; border-radius: 5px; margin-top: -38.9%; background: #8C3001;">
                                                                         
             <div>
                 <p style="text-transform: uppercase; font-size: 150%;" class="titulo2">Equipamento</p><br><br>

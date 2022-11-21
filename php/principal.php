@@ -18,6 +18,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel=" shortcut icon" href="../imagens/favicon.png " type="image/x-icon">   
     <link rel="stylesheet" href="../css/cad.css">
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
     <title>Astrofotografias | ODISSEIA</title>
@@ -117,23 +118,17 @@
 <body style = "overflow-y: scroll";>
 
 <header style = "background-color: #BC5357;"> 
-        <center>
-        <div class="menu" style = "padding-left: -50%; margin-left: 5%; padding-bottom: -10%; margin-top: 0.2%">
+    <br>
+    <p class="odi" style = "font-size: 200%; margin-top: -2%; height: 8px;"><a href="inicio.php">O D I S S E I A</a></p>
+        <div class="menu" style = "padding-top: -1%; padding-left: 66%">
             <ul>
-            <li>
-                <form method="post" action="../controle/processaII.php">
-                <input type="text" name="procurar" id="procurar" size="50" placeholder="" value="<?php echo $procurar;?>">
-            </li>
-            <li><button name="processo" id="processo" type="submit" style = "margin-left: -559%;"><img src="../imagens/busca.svg" style="margin-top: 5%;"></button></li>
-                    
-                    <li style = "margin-left: 18%;"><a href="inicio.php">INÍCIO </a></li>
                     <li><a href="criarastro.php">NOVA PUBLICAÇÃO </a></li>
                     <li><a href="meuperfil.php">MEU PERFIL </a></li>
                     <li><a href="../controle/processaI.php?processo=login">ENCERRAR SESSÃO</a></li>
                 </ul> 
         </div>
-            </header>
         
+    </header>
         </div>
     
         </center>
@@ -155,7 +150,7 @@
             ?>
                 <tr>
                 <td><p style = "font-family: 'Hammersmith One', sans-serif;"><?php echo $linha['nome_astro'];?></p></td>
-                <td><img src="<?php echo $linha['ficheiro'];?>" alt="" style="width: 20%;"></td>
+                <td><img src="<?php echo $linha['ficheiro'];?>" alt="" style="width: 20%; height: 20%;"></td>
                     <td><a href='astrofoto.php?idastro=<?php echo $linha['idastro'];?>&idusuario=<?php echo $linha['idusuario'];?>'> <img src="../imagens/vermais.svg" alt="" style="width: 1.5em;"></td>
                     </a></td>                   
                 </tr>
@@ -177,7 +172,7 @@
             ?>
                 <tr>
                 <td style = ""><p style = "font-family: 'Hammersmith One', sans-serif;"><?php echo $linha2['nome_astro'];?></p></td>
-                <td><img src="<?php echo $linha2['ficheiro'];?>" alt="" style="width: 20%; margin-left: -5.5%"></td>
+                <td><img src="<?php echo $linha2['ficheiro'];?>" alt="" style="width: 20%; height: 20%; margin-left: 10%"></td>
                 <td><a href='minhaastro.php?idastro=<?php echo $linha2['idastro'];?>&idusuario=<?php echo $linha2['idusuario'];?>'><img src="../imagens/vermais.svg" alt="" style="width: 1.5em;"></td>
                     </a></td>                   
                 </tr>

@@ -64,27 +64,27 @@
         if ($idartigos == 0 || $idartigos == ""){
             //artigos
             $artigos = new Artigos("", $_POST['nome_art'], $_POST['texto'],  $_POST['infos'], $ficheiroI, $ficheiroII, $_POST['idusuario']);                 
-            $novoId = $artigos->inserir();
+            $_POST['idartigos'] = $artigos->inserir();
             
                 foreach($anexo as $idastro){
-                    $anexos = new Anexos($idastro, $novoId);
+                    $anexos = new Anexos($idastro, $_POST['idartigos']);
                     $anexos->inserir();
                 }
             
-            header("location:../php/artigos.php?idartigos=$novoId&idastro=$idastro");
+            header("location:../php/principalart.php");
 
         }else{
-            $artigos = new Artigos($idartigos, $_POST['nome_art'], $_POST['texto'], $_POST['infos'], $ficheiroI, $ficheiroII , $_POST['idusuario']);                 
+            $artigos = new Artigos($_POST['idartigos'], $nome_art, $texto, $infos, $ficheiroI, $ficheiroII , $usuario);                 
             $resultado = $artigos->editar();
-            $verificar = Anexos::excluir($idartigos);
+            $verificar = Anexos::excluir($_POST['idartigos']);
             //anexo
                 foreach($anexo as $idastro){
-                    $anexos = new Anexos($idastro, $idartigos);
+                    $anexos = new Anexos($idastro, $_POST['idartigos']);
                     $anexos->inserir();
                 }
             }
             
-            header("location:../php/artigos.php?idartigos=$idartigos&idusuario=$usuario");
+            header("location:../php/artigos.php?idartigos=".$_POST['idartigos']."&idusuario=$usuario");
         }
 
     
